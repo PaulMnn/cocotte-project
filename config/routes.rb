@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Nested routes for ebooks, recipes, and recipages
+  resources :recipes
+  resources :ebooks, except: [:delete, :update] do
+      resources :recipages, only: [:create]
+    end
 end

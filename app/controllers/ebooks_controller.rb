@@ -1,0 +1,2 @@
+class EbooksController < ApplicationController
+end
