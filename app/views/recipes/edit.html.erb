@@ -1,0 +1,19 @@
+<div class="container-sm">
+<div class="row">
+<div class="col-9">
+  <p class="my-4 text-center">Modifie ta recette </p>
+    <%= simple_form_for(@recipe) do |f| %>
+      <div class="mb-3 col-12"><%= f.input :picture, as: :file, label:"image" %></div>
+      <div class="mb-3 col-12"><%= f.input :title, label: "Nom de la recette" %></div>
+      <div class="mb-3 col-12"><%= f.input :ingredient, label: "Ingrédients" %></div>
+      <div class="mb-3 col-12"><%= f.input :instruction, label: "Préparation" %></div>
+      <div class="mb-3 col-12" ><%= f.input :meal, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], label: "Catégorie" %></div>
+      <q class="mention">* mention obligatoire</q>
+      <div class="text-center"><%= f.button :submit, "Mettre à jour", class: "btn btn-primary rounded-5 mb-4" %></div>
+    <% end %>
+
+       <div class="text-center mt-3 mb-4">
+    </div>
+  </div>
+</div>
+</div>

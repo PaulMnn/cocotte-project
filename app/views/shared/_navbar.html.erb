@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to recipes_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -16,6 +16,12 @@
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
+             <form class="d-flex mx-auto" role="search" action="<%= recipes_path %>">
+        <div class="search-container">
+          <input class="form-control me-2 rounded-5 opacity-50 search-bar" type="search" name="query" placeholder="votre recherche" aria-label="Search">
+          <button class="btn search-bar-button" type="submit no-hover"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
