@@ -1,0 +1,21 @@
+<div class="container form-background-grey">
+<div class="row justify-content-center form-white">
+<div class="col-9">
+<div class="card">
+  <h3 class="my-4 text-center"><strong>Importer une nouvelle recette </strong></h3>
+    <%= simple_form_for(@recipe) do |f| %>
+      <div class="mb-3 form-control-sm"><%= f.input :picture, as: :file, label:"image" %></div>
+      <div class="mb-3 form-control-sm"><%= f.input :title, label: "Nom de la recette" %></div>
+      <div class="mb-3 form-control-sm"><%= f.input :ingredient, label: "Ingrédients" %></div>
+      <div class="mb-3 form-control-sm"><%= f.input :instruction, label: "Préparation" %></div>
+      <div class="mb-3 form-control-sm" ><%= f.input :meal, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], label: "Catégorie" %></div>
+      <q class="mention">* mention obligatoire</q>
+      <div class="text-center"><%= f.button :submit, "Ajouter", class: "btn btn-primary rounded-5 mb-4 mt-4 validate-form" %></div>
+    <% end %>
+    </div>
+
+       <div class="text-center mt-3 mb-4">
+    </div>
+  </div>
+</div>
+</div>
