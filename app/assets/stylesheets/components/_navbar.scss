@@ -1,6 +1,6 @@
-$navbar-height: 100px;
-$circle-radius: 80px;
-$backgroundColor: rgb(253, 192, 223);
+$navbar-height: 70px;
+$circle-radius: 60px;
+$backgroundColor: #B8CCDF;
 
 
 * {
@@ -50,7 +50,7 @@ $backgroundColor: rgb(253, 192, 223);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(100px - #{$circle-radius / 2});
+  bottom: calc(70px - #{$circle-radius / 2});
   margin-bottom: 0;
   height: $circle-radius;
   width: $circle-radius;
@@ -60,7 +60,7 @@ $backgroundColor: rgb(253, 192, 223);
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: rgb(255, 94, 0);
+  background-color: #1B2228;
   z-index: 9;
   box-shadow: 0 5px 5px rgba(255, 147, 85, 0.35);
   transition: height 0.3s;
@@ -73,7 +73,7 @@ $backgroundColor: rgb(253, 192, 223);
 
 .circle .plus-icon {
   color: white;
-  font-size: 27px;
+  font-size: 20px;
   transition: opacity 0.3s, transform 0.2s;
 }
 
@@ -87,14 +87,14 @@ $backgroundColor: rgb(253, 192, 223);
   top: 195px;
   color: white;
   background-color: rgba(255, 212, 212, 0.308);
-  height: 60px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   margin-bottom: 5px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -133,16 +133,18 @@ $backgroundColor: rgb(253, 192, 223);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(100px - #{$circle-radius + 20} / 2);
+  bottom: calc(70px - #{$circle-radius + 20} / 2);
   margin-bottom: 0;
   height: calc(#{$circle-radius} + 20px);
   width: calc(#{$circle-radius} + 20px);
   border-radius: calc(#{$circle-radius + 20} / 2);
   background-color: $backgroundColor;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  border: none;
 }
 
 .icon-home,
-.icon-settings {
-  font-size: 29px;
+.icon-book {
+  font-size: 27px;
   color: $backgroundColor;
 }
