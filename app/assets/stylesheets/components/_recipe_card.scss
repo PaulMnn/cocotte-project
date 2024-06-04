@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 350px;
+  height: 100px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+  margin: 15px;
+  border: none;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 7px;
+  border-radius: 5px;
+}
+.card-content {
+  flex-grow: 1;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-content h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-align:start;
+}
+.card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  color: #151414;
+  font-size: 22px;
+}

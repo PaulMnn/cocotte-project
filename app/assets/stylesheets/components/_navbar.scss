@@ -1,12 +1,148 @@
-.navbar-lewagon {
+$navbar-height: 100px;
+$circle-radius: 80px;
+$backgroundColor: rgb(253, 192, 223);
+
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $backgroundColor;
+}
+
+.navbar {
+  position: absolute;
+  bottom: 0;
+  width: 390px;
+  height: $navbar-height;
+  min-width: 400px;
+  padding-left: 35px;
+  padding-right: 35px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(82, 74, 74, 0.3);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+
+.navbar:after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  height: 4px;
+  width: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: gray;
+  opacity: 0.3;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100px - #{$circle-radius / 2});
+  margin-bottom: 0;
+  height: $circle-radius;
+  width: $circle-radius;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(255, 94, 0);
+  z-index: 9;
+  box-shadow: 0 5px 5px rgba(255, 147, 85, 0.35);
+  transition: height 0.3s;
+}
+
+.circle:hover {
+  height: 200px;
+  border-radius: 50px;
+}
+
+.circle .plus-icon {
+  color: white;
+  font-size: 27px;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.circle:hover .plus-icon {
+  transform: rotate(360deg);
+  opacity: 0;
+}
+
+.circle .social {
+  position: absolute;
+  top: 195px;
+  color: white;
+  background-color: rgba(255, 212, 212, 0.308);
+  height: 60px;
+  width: 60px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.circle .social:nth-child(2) {
+  opacity: 0;
+  transition: opacity 0.3s, top 0.5s ease;
+}
+
+.circle .social:nth-child(3) {
+  opacity: 0;
+  transition: opacity 0.3s, top 0.5s 0.1s ease;
+}
+
+.circle .social:nth-child(4) {
+  opacity: 0;
+  transition: opacity 0.3s, top 0.5s 0.22s ease;
+  margin-bottom: 0px;
+}
+
+.circle:hover .social:nth-child(2) {
+  opacity: 1;
+  top: 5px;
+}
+
+.circle:hover .social:nth-child(3) {
+  opacity: 1;
+  top: calc(5px + 60px + 5px);
+}
+
+.circle:hover .social:nth-child(4) {
+  opacity: 1;
+  top: calc(5px + 60px + 5px + 60px + 5px);
+}
+
+.circleBackground {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100px - #{$circle-radius + 20} / 2);
+  margin-bottom: 0;
+  height: calc(#{$circle-radius} + 20px);
+  width: calc(#{$circle-radius} + 20px);
+  border-radius: calc(#{$circle-radius + 20} / 2);
+  background-color: $backgroundColor;
+}
+
+.icon-home,
+.icon-settings {
+  font-size: 29px;
+  color: $backgroundColor;
 }
