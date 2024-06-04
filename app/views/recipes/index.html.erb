@@ -1,0 +1,28 @@
+<body>
+  <h1>Liste des recettes</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li>
+        <h2><%= recipe.title %></h2>
+        <% if recipe.photo.attached? %>
+          <%= image_tag recipe.photo, style: 'width: 200px; height: 150px;' %>
+        <% else %>
+          <p>Aucune photo disponible</p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</body>
+
+
+<a href="show.html" class="card row">
+    <div class= "card-image col-4">
+      <%= image_tag('background_cocotte.jpg', alt: 'Easy homemade beef burger') %>
+    </div>
+    <div class="card-content col-4">
+        <h3>Burger viande vegan</h3>
+    </div>
+    <div class="card-arrow col-4">
+      <i class="bi bi-arrow-right-square-fill"></i>
+    </div>
+</a>
