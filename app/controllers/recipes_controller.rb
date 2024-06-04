@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  end
 
   def new
     @recipe = Recipe.new
@@ -31,6 +32,5 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :meal)
-
   end
 end
