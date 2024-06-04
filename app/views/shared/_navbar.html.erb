@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to recipes_path, class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +16,16 @@
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
+             <form class="d-flex mx-auto" role="search" action="<%= recipes_path %>">
+        <div class="search-container">
+          <input class="form-control me-2 rounded-5 opacity-50 search-bar" type="search" name="query" placeholder="votre recherche" aria-label="Search">
+          <button class="btn search-bar-button" type="submit no-hover"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "", class: "avatar", alt: "avatar" %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
