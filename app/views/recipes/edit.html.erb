@@ -1,19 +1,25 @@
-<div class="container-sm">
-<div class="row">
-<div class="col-9">
-  <p class="my-4 text-center">Modifie ta recette </p>
-    <%= simple_form_for(@recipe) do |f| %>
-      <div class="mb-3 col-12"><%= f.input :picture, as: :file, label:"image" %></div>
-      <div class="mb-3 col-12"><%= f.input :title, label: "Nom de la recette" %></div>
-      <div class="mb-3 col-12"><%= f.input :ingredient, label: "Ingrédients" %></div>
-      <div class="mb-3 col-12"><%= f.input :instruction, label: "Préparation" %></div>
-      <div class="mb-3 col-12" ><%= f.input :meal, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], label: "Catégorie" %></div>
-      <q class="mention">* mention obligatoire</q>
-      <div class="text-center"><%= f.button :submit, "Mettre à jour", class: "btn btn-primary rounded-5 mb-4" %></div>
-    <% end %>
-
-       <div class="text-center mt-3 mb-4">
+<div class="container form-background-grey py-4">
+  <div class="row justify-content-center blue-grey-background-form">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="form-frame p-4 mx-4">
+        <h3 class="my-4 text-center"><strong>Modifier une recette </strong></h3>
+          <%= simple_form_for(@recipe) do |f| %>
+            <div class="mb-2 d-flex justify content-end"><%= f.input :picture, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
+             <label for="icon-upload" class="icon-custom-button">
+              <i class="fa-solid fa-image"></i>
+                <span>Choisir un fichier</span>
+                  </label>
+                    </div>
+                      <div class="mb-2"><%= f.input :title, label: false, placeholder: "Nom de la recette" %></div>
+                      <div class="mb-2"><%= f.input :ingredient, label: false, placeholder: "Ingrédients" %></div>
+                    <div class="mb-2"><%= f.input :instruction, label: false, placeholder: "Préparation" %></div>
+                  <div class="mb-2" ><%= f.input :meal, label:false, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"] %></div>
+              <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 form-button" %></div>
+          <% end %>
+          </div>
+        <div class="text-center mt-3 mb-4">
+      </div>
     </div>
   </div>
 </div>
-</div>
+<%# image_tag('background_cocotte.jpg', alt: 'fond gris') %>

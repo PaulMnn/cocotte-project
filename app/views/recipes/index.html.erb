@@ -3,12 +3,14 @@
   <ul>
     <% @recipes.each do |recipe| %>
       <li>
-        <h2><%= recipe.title %></h2>
-        <% if recipe.photo.attached? %>
-          <%= image_tag recipe.photo, style: 'width: 200px; height: 150px;' %>
-        <% else %>
-          <p>Aucune photo disponible</p>
-        <% end %>
+      <%# si jamais tu veux cliquer sur le titre ou la photo pour aller vers le show %>
+      <%# tu peux mettre la ligne de code dans un erb = link_to recipe_path(@recipe) do sans oublier un end %>
+         <h2><%= recipe.title %></h2>
+          <% if recipe.photo.attached? %>
+            <%= image_tag recipe.photo, style: 'width: 200px; height: 150px;' %>
+          <% else %>
+            <p>Aucune photo disponible</p>
+          <% end %>
       </li>
     <% end %>
   </ul>
