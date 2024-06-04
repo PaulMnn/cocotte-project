@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
 
 puts 'Destroying Database...'
 Recipage.destroy_all
@@ -23,17 +24,56 @@ users << User.create!(email: 'user4@example.com', password: 'password123', passw
 users << User.create!(email: 'user5@example.com', password: 'password123', password_confirmation: 'password123')
 
 # Create recipes
-recipes = []
-recipes << Recipe.create!(title: 'Spaghetti Bolognese', instruction: 'Cook pasta, add sauce.', meal: 'Dinner', image: 'spaghetti.jpg', ingredient: 'Pasta, Tomato Sauce, Ground Beef', user: users[0])
-recipes << Recipe.create!(title: 'Caesar Salad', instruction: 'Mix lettuce, add dressing.', meal: 'Lunch', image: 'caesar_salad.jpg', ingredient: 'Lettuce, Caesar Dressing, Croutons', user: users[1])
-recipes << Recipe.create!(title: 'Pancakes', instruction: 'Mix ingredients, cook on griddle.', meal: 'Breakfast', image: 'pancakes.jpg', ingredient: 'Flour, Eggs, Milk, Syrup', user: users[2])
-recipes << Recipe.create!(title: 'Chicken Curry', instruction: 'Cook chicken, add curry sauce.', meal: 'Dinner', image: 'chicken_curry.jpg', ingredient: 'Chicken, Curry Powder, Coconut Milk', user: users[3])
-recipes << Recipe.create!(title: 'Fruit Smoothie', instruction: 'Blend all ingredients.', meal: 'Snack', image: 'fruit_smoothie.jpg', ingredient: 'Banana, Berries, Yogurt', user: users[4])
-recipes << Recipe.create!(title: 'Grilled Cheese Sandwich', instruction: 'Grill bread and cheese.', meal: 'Lunch', image: 'grilled_cheese.jpg', ingredient: 'Bread, Cheese, Butter', user: users[0])
-recipes << Recipe.create!(title: 'Tomato Soup', instruction: 'Heat tomatoes, blend.', meal: 'Lunch', image: 'tomato_soup.jpg', ingredient: 'Tomatoes, Cream, Basil', user: users[1])
-recipes << Recipe.create!(title: 'Omelette', instruction: 'Whisk eggs, cook in pan.', meal: 'Breakfast', image: 'omelette.jpg', ingredient: 'Eggs, Cheese, Ham', user: users[2])
-recipes << Recipe.create!(title: 'Chocolate Cake', instruction: 'Mix ingredients, bake.', meal: 'Snack', image: 'chocolate_cake.jpg', ingredient: 'Flour, Cocoa, Sugar', user: users[3])
-recipes << Recipe.create!(title: 'Steak', instruction: 'Season steak, grill.', meal: 'Dinner', image: 'steak.jpg', ingredient: 'Steak, Salt, Pepper', user: users[4])
+
+recipe = Recipe.new(title: 'Spaghetti Bolognese', instruction: 'Cook pasta, add sauce.', meal: 'Dinner', ingredient: 'Pasta, Tomato Sauce, Ground Beef', user: users[0])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496669/eekladnqir10npbnpvua.jpg")
+recipe.photo.attach(io: file, filename: "spaghetti.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Caesar Salad', instruction: 'Mix lettuce, add dressing.', meal: 'Lunch', ingredient: 'Lettuce, Caesar Dressing, Croutons', user: users[1])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496668/ntebdfwrkmzweyksj0ie.jpg")
+recipe.photo.attach(io: file, filename: "caesar_salad.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Pancakes', instruction: 'Mix ingredients, cook on griddle.', meal: 'Breakfast', ingredient: 'Flour, Eggs, Milk, Syrup', user: users[2])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496667/h4qhuspdjaungxkzejpc.jpg")
+recipe.photo.attach(io: file, filename: "pancakes.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Chicken Curry', instruction: 'Cook chicken, add curry sauce.', meal: 'Dinner', ingredient: 'Chicken, Curry Powder, Coconut Milk', user: users[3])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496666/ukaz83ebods9ureiskzd.jpg")
+recipe.photo.attach(io: file, filename: "chicken_curry.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Fruit Smoothie', instruction: 'Blend all ingredients.', meal: 'Snack', ingredient: 'Banana, Berries, Yogurt', user: users[4])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496665/ilwpuqmm7tqjjguvcqri.jpg")
+recipe.photo.attach(io: file, filename: "fruit_smoothie.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Grilled Cheese Sandwich', instruction: 'Grill bread and cheese.', meal: 'Lunch', ingredient: 'Bread, Cheese, Butter', user: users[0])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496664/lrywy5b7arspwc7ttxxn.jpg")
+recipe.photo.attach(io: file, filename: "grilled_cheese.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Tomato Soup', instruction: 'Heat tomatoes, blend.', meal: 'Lunch', ingredient: 'Tomatoes, Cream, Basil', user: users[1])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496663/xphcdhw7pkbezqxqvg4y.jpg")
+recipe.photo.attach(io: file, filename: "tomato_soup.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Omelette', instruction: 'Whisk eggs, cook in pan.', meal: 'Breakfast', ingredient: 'Eggs, Cheese, Ham', user: users[2])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496801/q2xc0h5m0gzjmzw4dxfv.jpg")
+recipe.photo.attach(io: file, filename: "omelette.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Chocolate Cake', instruction: 'Mix ingredients, bake.', meal: 'Snack', ingredient: 'Flour, Cocoa, Sugar', user: users[3])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496660/lcnwozhde7huz3jow1he.jpg")
+recipe.photo.attach(io: file, filename: "chocolate_cake.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(title: 'Steak', instruction: 'Season steak, grill.', meal: 'Dinner', ingredient: 'Steak, Salt, Pepper', user: users[4])
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496659/ibo8lmadn9updeyolkp1.jpg")
+recipe.photo.attach(io: file, filename: "steak.jpg", content_type: "photo/png")
+recipe.save
 
 # Create ebooks
 ebooks = []
@@ -44,15 +84,15 @@ ebooks << Ebook.create!(ebook_title: 'Desserts', theme: 'Sweet', user: users[3])
 ebooks << Ebook.create!(ebook_title: 'Vegetarian Dishes', theme: 'Vegetarian', user: users[4])
 
 # Create recipages
-Recipage.create!(templating: 'Template 1', recipe: recipes[0], ebook: ebooks[0])
-Recipage.create!(templating: 'Template 2', recipe: recipes[1], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: recipes[2], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: recipes[3], ebook: ebooks[3])
-Recipage.create!(templating: 'Template 5', recipe: recipes[4], ebook: ebooks[4])
-Recipage.create!(templating: 'Template 1', recipe: recipes[5], ebook: ebooks[0])
-Recipage.create!(templating: 'Template 2', recipe: recipes[6], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: recipes[7], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: recipes[8], ebook: ebooks[3])
-Recipage.create!(templating: 'Template 5', recipe: recipes[9], ebook: ebooks[4])
+Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[0], ebook: ebooks[0])
+Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[1], ebook: ebooks[1])
+Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[2], ebook: ebooks[2])
+Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[3], ebook: ebooks[3])
+Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[4], ebook: ebooks[4])
+Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[5], ebook: ebooks[0])
+Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[6], ebook: ebooks[1])
+Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[7], ebook: ebooks[2])
+Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[8], ebook: ebooks[3])
+Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[9], ebook: ebooks[4])
 
 puts "Seed data created successfully!"
