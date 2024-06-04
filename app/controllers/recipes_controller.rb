@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-
   def new
     @recipe = Recipe.new
   end
@@ -37,6 +36,5 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :meal)
-
   end
 end

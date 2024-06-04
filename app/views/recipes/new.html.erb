@@ -1,21 +1,20 @@
 <div class="container form-background-grey">
-<div class="row justify-content-center form-white">
-<div class="col-9">
-<div class="card h-70 d-flex px-3 form-card">
-  <h3 class="my-4 text-center"><strong>Importer une nouvelle recette </strong></h3>
-    <%= simple_form_for(@recipe) do |f| %>
-      <div class="mb-2 form-control-sm"><%= f.input :picture, as: :file, label:"image" %></div>
-      <div class="mb-2 form-control-sm"><%= f.input :title, label: false, placeholder: "Nom de la recette" %></div>
-      <div class="mb-2 form-control-sm"><%= f.input :ingredient, label: false, placeholder: "Ingrédients" %></div>
-      <div class="mb-2 form-control-sm"><%= f.input :instruction, label: false, placeholder: "Préparation" %></div>
-      <div class="mb-2 form-control-sm" ><%= f.input :meal, label:false, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"] %></div>
-      <q class="mention">* mention obligatoire</q>
-      <div class="text-center"><%= f.button :submit, "Ajouter", class: "btn btn-primary rounded-5 mb-4 mt-4 validate-form-black" %></div>
-    <% end %>
-    </div>
-
-       <div class="text-center mt-3 mb-4">
+  <div class="row justify-content-center form-white">
+    <div>
+      <div class="d-flex px-3 form-frame">
+        <h3 class="my-4 text-center"><strong>Importer une nouvelle recette </strong></h3>
+          <%= simple_form_for(@recipe) do |f| %>
+            <div class="mb-2"><%= f.input :picture, as: :file, label:"image" %></div>
+            <div class="mb-2"><%= f.input :title, label: false, placeholder: "Nom de la recette" %></div>
+            <div class="mb-2"><%= f.input :ingredient, label: false, placeholder: "Ingrédients" %></div>
+            <div class="mb-2"><%= f.input :instruction, label: false, placeholder: "Préparation" %></div>
+            <div class="mb-2" ><%= f.input :meal, label:false, collection: ["Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"] %></div>
+            <q class="mention">* mention obligatoire</q>
+            <div class="text-center"><%= f.button :submit, "Ajouter", class: "btn btn-primary rounded-5 mb-4 mt-4 validate-form-black" %></div>
+            <% end %>
+          </div>
+        <div class="text-center mt-3 mb-4">
+      </div>
     </div>
   </div>
-</div>
 </div>
