@@ -2,16 +2,18 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: center;
   background-color: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 350px;
-  height: 100px;
+  width: 320px;
+  height: 90px;
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s;
   margin: 15px;
+  margin-left: 35px;
   border: none;
 }
 .card:hover {
