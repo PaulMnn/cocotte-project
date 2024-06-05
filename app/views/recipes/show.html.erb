@@ -1,13 +1,26 @@
+<div class="recipe-show-container" data-controller="move-instructions-stamp">
+  <% if @recipe.photo.attached? %>
+    <div class="recipe-photo">
+      <%= cl_image_tag @recipe.photo.key, class: "background-image" %>
+      <div class="overlay"></div>
+    </div>
+  <% end %>
 
-<h2><%= @recipe.title %></h2>
-<p><%= @recipe.instruction %></p>
-<p>Meal: <%= @recipe.meal %></p>
-<p>Ingredients: <%= @recipe.ingredient %></p>
+  <div class="top-bar">
+     <%= link_to "←", recipes_path, class: "back-arrow" %>
+    <h1 class="recipe-title"><%= @recipe.title %></h1>
+    <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
+  </div>
 
-<% if @recipe.photo.attached? %>
-  <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<%# Voici les liens vers l'index et edit %>
-<%= link_to "Modifier", edit_recipe_path(@recipe) %>
-<%= link_to "Retour", recipes_path %>
+  <div class="recipe-content" data-move-instructions-stamp-target="content" data-action="click->move-instructions-stamp#moveCard">
+    <div class="texte-recette">
+      <h2>Ingrédients</h2>
+      <p><%= @recipe.ingredient %></p>
+      <h2>Instructions</h2>
+      <p><%= @recipe.instruction %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.
+      </p>
+    </div>
+  </div>
+</div>

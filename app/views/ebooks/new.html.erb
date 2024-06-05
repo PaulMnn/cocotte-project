@@ -1,0 +1,20 @@
+<div class="container recipe_card ebook-form">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="form-frame p-4 mx-4">
+        <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
+          <%= simple_form_for(@ebook) do |f| %>
+            <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: 'form-field'} %>
+           <div>
+           <label>
+           <p>Style du template</p>
+           <img src="background_cocotte.jpg">
+           </label>
+           </div>
+           <%= f.input :theme, as: :text, label: false, placeholder: "theme" %>
+          <%= f.button :submit, "enregistrer", class: "btn btn-primary rounded-5 black-create-ebook" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

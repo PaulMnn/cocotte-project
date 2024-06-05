@@ -13,6 +13,7 @@ class EbooksController < ApplicationController
 
   def create
     @ebook = Ebook.new(ebook_params)
+    @ebook.user = current_user
     if @ebook.save
       redirect_to ebook_path(@ebook)
     else
@@ -36,6 +37,6 @@ class EbooksController < ApplicationController
   private
 
   def ebook_params
-    params.require(:ebook).permit(:title, :description)
+    params.require(:ebook).permit(:ebook_title, :theme)
   end
 end

@@ -1,0 +1,19 @@
+<%= simple_form_for(@recipe) do |f| %>
+            <div class="mb-2 d-flex justify content-end"><%= f.input :picture, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
+             <label for="icon-upload" class="icon-custom-button">
+                <span>Choisir un fichier</span>
+              <i class="fa-solid fa-image"></i>
+                  </label>
+                    </div>
+                      <div class="mb-2"><%= f.input :title, as: :text, label: false, placeholder: "--Nom de la recette--", input_html: { class: 'form-field'} %></div>
+                      <div class="mb-2"><%= f.input :ingredient, label: false, placeholder: "--Ingrédients--", input_html: { class: 'form-field'} %></div>
+                    <div class="mb-2"><%= f.input :instruction, label: false, placeholder: "--Préparation--", input_html: { class: 'form-field'} %></div>
+                  <div class="mb-2" ><%= f.input :meal, label: false, collection: ["--choisir--", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: "--choisir--", input_html: { class: 'form-control' } %></div>
+              <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 form-button custom-color-button" %></div>
+          <% end %>
+          </div>
+        <div class="text-center mt-3 mb-4">
+      </div>
+    </div>
+  </div>
+</div>

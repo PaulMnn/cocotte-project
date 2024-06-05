@@ -1,21 +1,30 @@
-<div>
-  <ul class="recipe-list">
-    <% @recipes.each do |recipe| %>
-      <li>
-        <a href="<%= recipe_path(recipe) %>" class="card row">
-          <div class="card-image col-4">
-            <% if recipe.photo.attached? %>
-              <%= image_tag recipe.photo, alt: recipe.title %>
-            <% end %>
-          </div>
-          <div class="card-content col-4">
-            <h3><%= recipe.title %></h3>
-          </div>
-          <div class="card-arrow col-4">
-            <i class="bi bi-arrow-right-square-fill"></i>
-          </div>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control form-input" placeholder="Search anything...">
+      </div>
+    </div>
+  </div>
+
+  <div>
+      <% @recipes.each do |recipe| %>
+          <a href="<%= recipe_path(recipe) %>" class="card row mx-0">
+            <div class="card-image col-4">
+              <% if recipe.photo.attached? %>
+                <%= image_tag recipe.photo, alt: recipe.title %>
+              <% end %>
+            </div>
+            <div class="card-content col-4">
+              <h3><%= recipe.title %></h3>
+            </div>
+            <div class="card-arrow col-4">
+              <i class="bi bi-arrow-right-square-fill"></i>
+            </div>
+          </a>
+      <% end %>
+  </div>
+
 </div>
