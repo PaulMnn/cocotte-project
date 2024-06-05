@@ -55,7 +55,7 @@ $backgroundColor: #89AAC9;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #1B2228;
+  background-color: #1b2228;
   z-index: 9;
   box-shadow: 0 5px 5px rgba(255, 147, 85, 0.35);
   transition: height 0.3s;
@@ -150,4 +150,12 @@ $backgroundColor: #89AAC9;
   width: 100px;
   height: 25px;
   transform: translate(-50%, -50%);
-  }
+  z-index: 9999;
+}
+
+.container-logo {
+  height: 40px;
+  position: sticky;
+  top: 0px;
+  background-color: none;
+}

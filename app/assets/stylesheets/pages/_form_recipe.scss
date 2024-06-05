@@ -8,9 +8,9 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 700px;
-  padding-top: 5%;
   margin: auto;
-  min-height: 80vh
+  min-height: 80vh;
+  margin-top: 40px;
 }
 
 .form-frame h3 {
@@ -18,12 +18,14 @@
 }
 
 .blue-grey-background-form {
-
   background-image: url('background_cocotte.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh;
+  margin-top: -60px;
 }
 
+
 input::placeholder {
-  color: rgba(153, 153, 153, 0.5); /* Gris avec 50% de transparence */
+  color: rgba(153, 153, 153, 0.5);
 }
