@@ -1,4 +1,4 @@
-<div class="recipe-show-container">
+<div class="recipe-show-container" data-controller="move-instructions-stamp">
   <% if @recipe.photo.attached? %>
     <div class="recipe-photo">
       <%= cl_image_tag @recipe.photo.key, class: "background-image" %>
@@ -12,12 +12,15 @@
     <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
   </div>
 
-  <div class="recipe-content">
+  <div class="recipe-content" data-move-instructions-stamp-target="content" data-action="click->move-instructions-stamp#moveCard">
     <div class="texte-recette">
       <h2>Ingrédients</h2>
       <p><%= @recipe.ingredient %></p>
       <h2>Instructions</h2>
       <p><%= @recipe.instruction %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi.
+      </p>
     </div>
   </div>
 </div>

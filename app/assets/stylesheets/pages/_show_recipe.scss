@@ -58,7 +58,7 @@
 
 .recipe-content {
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   width: 100%;
   background: white;
   max-height: 70%;
@@ -66,6 +66,11 @@
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+.recipe-content.expanded {
+  max-height: 80%;
+  bottom: 50px;
 }
 
 .texte-recette {
