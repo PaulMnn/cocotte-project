@@ -1,5 +1,11 @@
 .ebook-form {
-  background-color: white;
-  height: 100%;
   background-image: url('background_cocotte.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -60px;
+}
+
+.black-create-ebook {
+  background-color: black;
 }
