@@ -25,6 +25,7 @@ $backgroundColor: #89AAC9;
   border-top-right-radius: 25px;
   background-color: white;
   box-shadow: 0 10px 20px rgba(82, 74, 74, 0.3);
+  z-index: 9999;
 }
 
 
@@ -155,7 +156,6 @@ $backgroundColor: #89AAC9;
 
 .container-logo {
   height: 40px;
-  position: sticky;
-  top: 0px;
   background-color: none;
+  z-index: 9999;
 }

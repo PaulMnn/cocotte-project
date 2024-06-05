@@ -1,12 +1,4 @@
-<head>
-  <style>
-    .recipe-list {
-      list-style: none; /* Supprime les points de liste */
-      padding: 0; /* Supprime le padding par défaut de l'élément ul */
-    }
-  </style>
-</head>
-<body>
+<div>
   <ul class="recipe-list">
     <% @recipes.each do |recipe| %>
       <li>
@@ -26,4 +18,4 @@
       </li>
     <% end %>
   </ul>
-</body>
+</div>
