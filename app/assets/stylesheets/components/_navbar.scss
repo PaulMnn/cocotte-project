@@ -1,11 +1,6 @@
 $navbar-height: 70px;
 $circle-radius: 60px;
-$backgroundColor: #B8CCDF;
-
-
-* {
-  box-sizing: border-box;
-}
+$backgroundColor: #89AAC9;
 
 .wrapper {
   height: 100%;
@@ -16,7 +11,7 @@ $backgroundColor: #B8CCDF;
 }
 
 .navbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 390px;
   height: $navbar-height;
@@ -139,7 +134,6 @@ $backgroundColor: #B8CCDF;
   width: calc(#{$circle-radius} + 20px);
   border-radius: calc(#{$circle-radius + 20} / 2);
   background-color: $backgroundColor;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   border: none;
 }
 

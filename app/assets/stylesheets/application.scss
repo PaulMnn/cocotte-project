@@ -11,3 +11,14 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/form_recipe"
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 100px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+}
+
+
