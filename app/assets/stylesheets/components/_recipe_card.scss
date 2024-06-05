@@ -6,15 +6,20 @@
   width: 100%;
   height: 100px;
   text-decoration: none;
+  background-color: white;
   color: inherit;
   transition: transform 0.2s;
   margin: 15px;
   border: none;
 }
 
-// .container {
-//   // background-color: rgb(27, 34, 40);
-// }
+.background-color-logo{
+  background-color: #97b4cf;
+}
+
+.container {
+ background-color: #97b4cf;
+}
 
 .card:hover {
   transform: scale(1.05);
