@@ -142,3 +142,12 @@ $backgroundColor: #89AAC9;
   font-size: 27px;
   color: $backgroundColor;
 }
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 100px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+  }
