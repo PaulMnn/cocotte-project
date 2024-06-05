@@ -1,0 +1,120 @@
+
+.stats-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.stats-item {
+  text-align: center;
+}
+
+.stats-number {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stats-label {
+  font-size: 0.5em;
+  margin: 0;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+.stats-big-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.stats-big-card:hover {
+  transform: scale(1.05);
+}
+
+.image-container-card {
+  position: relative;
+  flex: 0 0 70%;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.image-container-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.edit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.text-container {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container h2 {
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: 'Comic Neue', sans-serif;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.info span {
+  font-size: 0.9em;
+}
