@@ -7,3 +7,7 @@
 <% if @recipe.photo.attached? %>
   <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+<%# Voici les liens vers l'index et edit %>
+<%= link_to "Modifier", edit_recipe_path(@recipe) %>
+<%= link_to "Retour", recipes_path %>

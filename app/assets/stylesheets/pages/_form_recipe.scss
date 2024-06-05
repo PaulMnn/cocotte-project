@@ -1,24 +1,31 @@
 .form-background-grey {
-  background-color: #97B4CF;
-}
-.validate-form-black {
-  color: whitesmoke;
-  background-color: black;
-  border-radius: 15%;
-  width: 200px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
 }
 
-.form-white {
-  border-color: solid,black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.form-frame {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 700px;
+  margin: auto;
+  min-height: 80vh;
+  margin-top: 40px;
 }
 
-.validate-form-black:hover {
-  color:black;
-  background-color: whitesmoke;
-
+.form-frame h3 {
+  font-family: 'Arial', sans-serif;
 }
 
-.form-card {
-  border-radius: 30px;
+.blue-grey-background-form {
+  background-image: url('background_cocotte.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -60px;
+}
+
+
+input::placeholder {
+  color: rgba(153, 153, 153, 0.5);
 }
