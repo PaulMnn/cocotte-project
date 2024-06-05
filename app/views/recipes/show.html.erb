@@ -1,13 +1,23 @@
+<div class="recipe-show-container">
+  <% if @recipe.photo.attached? %>
+    <div class="recipe-photo">
+      <%= cl_image_tag @recipe.photo.key, class: "background-image" %>
+      <div class="overlay"></div>
+    </div>
+  <% end %>
 
-<h2><%= @recipe.title %></h2>
-<p><%= @recipe.instruction %></p>
-<p>Meal: <%= @recipe.meal %></p>
-<p>Ingredients: <%= @recipe.ingredient %></p>
+  <div class="top-bar">
+     <%= link_to "←", recipes_path, class: "back-arrow" %>
+    <h1 class="recipe-title"><%= @recipe.title %></h1>
+    <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
+  </div>
 
-<% if @recipe.photo.attached? %>
-  <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<%# Voici les liens vers l'index et edit %>
-<%= link_to "Modifier", edit_recipe_path(@recipe) %>
-<%= link_to "Retour", recipes_path %>
+  <div class="recipe-content">
+    <div class="texte-recette">
+      <h2>Ingrédients</h2>
+      <p><%= @recipe.ingredient %></p>
+      <h2>Instructions</h2>
+      <p><%= @recipe.instruction %></p>
+    </div>
+  </div>
+</div>
