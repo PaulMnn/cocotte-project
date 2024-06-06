@@ -1,6 +1,7 @@
 class EbooksController < ApplicationController
   def show
     @ebook = Ebook.find(params[:id])
+    @recipages = @ebook.recipages
   end
 
   def index
@@ -11,7 +12,11 @@ class EbooksController < ApplicationController
   end
 
   def new
+    @recipes = Recipe.all
     @ebook = Ebook.new
+    @recipages = current_user.recipes.map do |recipe|
+      Recipage.new(recipe: recipe)
+    end
   end
 
   def create
@@ -22,6 +27,10 @@ class EbooksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def display_choice
+    @templates = Ebook.select(:theme).distinct
   end
 
   def edit

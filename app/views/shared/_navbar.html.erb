@@ -7,10 +7,21 @@
 
     <div class="circle">
       <i class="fas fa-plus plus-icon"></i>
-      <i class="fab fa-youtube social mt-2"></i>
-      <i class="fab fa-twitter social mt-2"></i>
-      <i class="fab fa-github social mt-2"></i>
+      <i class="fa-sharp fa-solid fa-pen social mt-2" data-link="/recipes/new"></i>
+      <i class="fa-solid fa-link social mt-2" data-link="/recipes"></i>
+      <i class="fa-solid fa-camera social mt-2" data-link="/recipes"></i>
     </div>
     <div class="circleBackground"></div>
   </div>
 </div>
+
+
+<script>
+  var icons = document.querySelectorAll(".circle i");
+
+  icons.forEach(function(icon) {
+    icon.addEventListener("click", function() {
+      window.location.href = this.getAttribute("data-link");
+    });
+  });
+</script>

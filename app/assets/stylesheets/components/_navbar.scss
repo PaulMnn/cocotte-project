@@ -58,7 +58,7 @@ $backgroundColor: #89AAC9;
   overflow: hidden;
   background-color: #1b2228;
   z-index: 9;
-  box-shadow: 0 5px 5px rgba(255, 147, 85, 0.35);
+  box-shadow: 0 5px 5px #b1c6db;
   transition: height 0.3s;
 }
 
@@ -82,9 +82,9 @@ $backgroundColor: #89AAC9;
   position: absolute;
   top: 195px;
   color: white;
-  background-color: rgba(255, 212, 212, 0.308);
-  height: 30px;
-  width: 30px;
+  background-color: #374450;
+  height: 40px;
+  width: 40px;
   margin-bottom: 5px;
   border-radius: 50%;
   display: flex;
