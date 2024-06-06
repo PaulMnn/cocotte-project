@@ -7,20 +7,19 @@
   <% end %>
 
 <div class="top-bar row justify-content-between align-items-center">
+
   <div class="col-2">
-    <%= link_to "←", recipes_path, class: "back-arrow" %>
+      <%= link_to "←", recipes_path, class: "back-arrow" %>
   </div>
   <div class="col-6 text-center">
-  <div class="top-bar">
-    <%= link_to "←", recipes_path, class: "back-arrow" %>
-    <h1 class="recipe-title"><%= @recipe.title %></h1>
+      <h1 class="recipe-title"><%= @recipe.title %></h1>
   </div>
   <div class="col-2">
-    <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
+      <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
   </div>
   <div class="col-2">
-    <%= link_to "🗑", recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "T'es sûr chef ?" }, class: "delete-button" %>
-</div>
+      <%= link_to "🗑", recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "T'es sûr chef ?" }, class: "delete-button" %>
+  </div>
 </div>
 
 
@@ -32,7 +31,6 @@
       <p><%= @recipe.ingredient %></p>
       <h2>Instructions</h2>
       <p><%= @recipe.instruction %></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla.</p>
     </div>
   </div>
 </div>
