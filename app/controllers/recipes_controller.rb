@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -24,11 +25,6 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
-
-    # if params[:recipe][:photo].present?
-    #   upload_result = Cloudinary::Uploader.upload(params[:recipe][:photo].path)
-    #   @recipe.picture_url = upload_result['secure_url']
-    # end
 
     if @recipe.save
       redirect_to @recipe, notice: "Recette bien créée"
@@ -57,7 +53,21 @@ class RecipesController < ApplicationController
   end
 
 
+  def destroy
+    @recipe.destroy
+    respond_to do |format|
+      format.html { redirect_to recipes_url, notice: 'Recette bien supprimée.' }
+      format.json { head :no_content }
+
+    end
+  end
+
+
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
   def recipe_params
     params.require(:recipe).permit(:title, :ingredient, :instruction, :meal, :photo)
