@@ -5,7 +5,7 @@
       <div class="overlay"></div>
     </div>
   <% end %>
-  
+
 <div class="top-bar row justify-content-between align-items-center">
   <div class="col-2">
     <%= link_to "←", recipes_path, class: "back-arrow" %>
@@ -22,6 +22,7 @@
     <%= link_to "🗑", recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "T'es sûr chef ?" }, class: "delete-button" %>
 </div>
 </div>
+
 
 
   <div class="recipe-content" data-move-instructions-stamp-target="content" data-action="click->move-instructions-stamp#moveCard">
