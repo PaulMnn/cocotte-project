@@ -8,6 +8,7 @@ class EbooksController < ApplicationController
   end
 
   def new
+    @recipes = Recipe.all
     @ebook = Ebook.new
     @recipages = current_user.recipes.map do |recipe|
       Recipage.new(recipe: recipe)

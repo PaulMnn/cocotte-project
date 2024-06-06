@@ -23,34 +23,39 @@
 </div>
 
 
-<button type="button" class="btn btn-primary rounded-5" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn btn-primary rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Choisis tes recettes
-  </button>
+</button>
 
-
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Vos recettes</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-            </button>
-             </div>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
               <div class="modal-body">
-               <%# modal body text %>
-              </div>
-                <%= f.button :submit, "enregistrer", class: "btn btn-primary rounded-5 ebook-valid-black" %>
-        <% end %>
-            <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+                <%= simple_form_for(@ebook) do |f| %>
+                  <%= f.simple_fields_for :recipages do |recipages_form| %>
+                    <%= recipages_form.collection_check_boxes :recipe_ids, @recipes, :id, :title do |r| %>
+                      <div class="form-check">
+                        <%= r.check_box(class: 'form-check-input') %>
+                        <%= r.label(class: 'form-check-label') %>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+                            <%= button_tag "Valider", type: "submit", class: "btn btn-primary" %>
+                          </div>
+                    </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
   </div>
 </div>
-
-
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
