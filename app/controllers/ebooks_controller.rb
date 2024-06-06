@@ -1,6 +1,7 @@
 class EbooksController < ApplicationController
   def show
     @ebook = Ebook.find(params[:id])
+    @recipages = @ebook.recipages
   end
 
   def index
