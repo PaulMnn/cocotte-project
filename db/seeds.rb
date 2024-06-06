@@ -77,22 +77,27 @@ recipe.save
 
 # Create ebooks
 ebooks = []
-ebooks << Ebook.create!(ebook_title: 'Healthy Eating', theme: 'Health', user: users[0])
-ebooks << Ebook.create!(ebook_title: 'Quick Recipes', theme: 'Fast', user: users[1])
-ebooks << Ebook.create!(ebook_title: 'Gourmet Meals', theme: 'Gourmet', user: users[2])
-ebooks << Ebook.create!(ebook_title: 'Desserts', theme: 'Sweet', user: users[3])
-ebooks << Ebook.create!(ebook_title: 'Vegetarian Dishes', theme: 'Vegetarian', user: users[4])
+
+ebook = Ebook.create!(ebook_title: 'Healthy Eating', theme: 'Health', user: users[0])
+file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
+ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
+ebooks << ebook
+
+ebook = Ebook.create!(ebook_title: 'Quick Recipes', theme: 'Fast', user: users[1])
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
+ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
+ebooks << ebook
 
 # Create recipages
 Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[0], ebook: ebooks[0])
 Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[1], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[2], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[3], ebook: ebooks[3])
-Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[4], ebook: ebooks[4])
-Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[5], ebook: ebooks[0])
-Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[6], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[7], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[8], ebook: ebooks[3])
-Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[9], ebook: ebooks[4])
+# Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[2], ebook: ebooks[2])
+# Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[3], ebook: ebooks[3])
+# Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[4], ebook: ebooks[4])
+# Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[5], ebook: ebooks[0])
+# Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[6], ebook: ebooks[1])
+# Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[7], ebook: ebooks[2])
+# Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[8], ebook: ebooks[3])
+# Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[9], ebook: ebooks[4])
 
 puts "Seed data created successfully!"
