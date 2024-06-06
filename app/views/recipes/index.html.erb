@@ -19,9 +19,10 @@
 
 <div class="row mt-1">
   <div class="col-md-6">
-    <%= form_with url: recipes_path, method: :get, class: "d-flex align-items-center" do %>
-      <%= select_tag :meal, options_for_select(["--choisir--", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: params[:meal]), class: "form-control search-display" %>
-      <%= submit_tag "Filtrer", name: "", class: "btn btn-default filter-display" %>
+    <%= form_with url: recipes_path, method: :get, class: "d-flex align-items-center", id: "meal-filter-form" do %>
+      <%= select_tag :meal, options_for_select(["Type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: params[:meal]), class: "form-control search-display", onchange: "this.form.submit();" %>
+         <%= submit_tag "Filtrer", name: "", class: "btn btn-default filter-display" %>
+
     <% end %>
   </div>
 </div>
