@@ -9,7 +9,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 600px;
-  height: 60px;
+  height: 70px;
   margin: 0 auto;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .stats-label {
-  font-size: 0.5em;
+  font-size: 0.7em;
   margin: 0;
 }
 
@@ -33,13 +33,16 @@
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight: normal;
+  opacity: 1;
   transition: opacity 0.3s ease;
+  height: 45px;
+  width: auto;
+  margin: 12px;
 }
 
 .btn-ghost:hover {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
@@ -54,7 +57,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 600px;
-  height: 200px;
+  height: 220px;
   margin: 0 auto;
   position: relative;
   transition: transform 0.2s;
@@ -117,4 +120,9 @@
 
 .info span {
   font-size: 0.9em;
+}
+
+.unique-page-class {
+  background-color: #97b4cf;
+  padding-bottom: 60px;
 }
