@@ -41,7 +41,6 @@
   z-index: 10;
 }
 
-
 .back-arrow, .edit-button {
   font-size: 24px;
   text-decoration: none;
@@ -55,7 +54,6 @@
   flex-grow: 1;
 }
 
-
 .recipe-content {
   position: absolute;
   bottom: -50px;
@@ -66,6 +64,7 @@
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  overflow: hidden;
 }
 
 .recipe-content.expanded {
@@ -83,4 +82,16 @@
 
 .texte-recette p {
   margin-bottom: 20px;
+}
+
+.meal-label {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: #1b2228;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  z-index: 20;
 }

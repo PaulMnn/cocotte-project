@@ -7,17 +7,19 @@
   <% end %>
 
   <div class="top-bar">
-     <%= link_to "←", recipes_path, class: "back-arrow" %>
+    <%= link_to "←", recipes_path, class: "back-arrow" %>
     <h1 class="recipe-title"><%= @recipe.title %></h1>
     <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
   </div>
 
   <div class="recipe-content" data-move-instructions-stamp-target="content" data-action="click->move-instructions-stamp#moveCard">
+    <div class="meal-label"><%= @recipe.meal %></div>
     <div class="texte-recette">
       <h2>Ingrédients</h2>
       <p><%= @recipe.ingredient %></p>
       <h2>Instructions</h2>
       <p><%= @recipe.instruction %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla.</p>
     </div>
   </div>
 </div>
