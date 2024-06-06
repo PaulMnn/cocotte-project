@@ -5,15 +5,52 @@
         <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
           <%= simple_form_for(@ebook) do |f| %>
             <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: 'form-field'} %>
-           <div>
-           <label>
-           <p>Style du template</p>
-           <img src="background_cocotte.jpg">
-           </label>
-           </div>
-           <%= f.input :theme, as: :text, label: false, placeholder: "theme" %>
-          <%= f.button :submit, "enregistrer", class: "btn btn-primary rounded-5 black-create-ebook" %>
+
+<div class="form-container mb-5">
+  <div class="d-flex justify-content-center">
+    <div class="card">
+      <label>
+        <p class="text-center">Theme de l'Ebook</p>
+          <div class="col-12 theme-border">
+            <%= f.radio_button :theme, "template 1", class: 'theme-radio' %>
+            </div>
+            <div class="col-12 theme-border">
+          <%= f.radio_button :theme, "template 2", class: 'theme-radio' %>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-primary rounded-5" data-toggle="modal" data-target="#exampleModalLong">
+  Choisis tes recettes
+  </button>
+
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Vos recettes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+            </button>
+             </div>
+              <div class="modal-body">
+               <%# modal body text %>
+              </div>
+                <%= f.button :submit, "enregistrer", class: "btn btn-primary rounded-5 ebook-valid-black" %>
         <% end %>
+            <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       </div>
     </div>
   </div>

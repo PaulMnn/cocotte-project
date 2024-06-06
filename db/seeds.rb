@@ -77,11 +77,11 @@ recipe.save
 
 # Create ebooks
 ebooks = []
-ebooks << Ebook.create!(ebook_title: 'Healthy Eating', theme: 'Health', user: users[0])
-ebooks << Ebook.create!(ebook_title: 'Quick Recipes', theme: 'Fast', user: users[1])
-ebooks << Ebook.create!(ebook_title: 'Gourmet Meals', theme: 'Gourmet', user: users[2])
-ebooks << Ebook.create!(ebook_title: 'Desserts', theme: 'Sweet', user: users[3])
-ebooks << Ebook.create!(ebook_title: 'Vegetarian Dishes', theme: 'Vegetarian', user: users[4])
+ebooks << Ebook.create!(ebook_title: 'Healthy Eating', theme: 'theme 1', user: users[0])
+ebooks << Ebook.create!(ebook_title: 'Quick Recipes', theme: 'theme 2', user: users[1])
+ebooks << Ebook.create!(ebook_title: 'Gourmet Meals', theme: 'theme 2', user: users[2])
+ebooks << Ebook.create!(ebook_title: 'Desserts', theme: 'theme 1', user: users[3])
+ebooks << Ebook.create!(ebook_title: 'Vegetarian Dishes', theme: 'theme 2', user: users[4])
 
 # Create recipages
 Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[0], ebook: ebooks[0])
