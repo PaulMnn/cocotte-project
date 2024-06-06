@@ -5,9 +5,9 @@
               <i class="fa-solid fa-image"></i>
                   </label>
                     </div>
-                      <div class="mb-2"><%= f.input :title, as: :text, label: false, placeholder: "--Nom de la recette--", input_html: { class: 'form-field'} %></div>
-                      <div class="mb-2"><%= f.input :ingredient, label: false, placeholder: "--Ingrédients--", input_html: { class: 'form-field'} %></div>
-                    <div class="mb-2"><%= f.input :instruction, label: false, placeholder: "--Préparation--", input_html: { class: 'form-field'} %></div>
+                      <div class="mb-2"><%= f.input :title, as: :text, label: "Nom de la recette", placeholder: "--Nom de la recette--", input_html: { class: 'form-field'} %></div>
+                      <div class="mb-2"><%= f.input :ingredient, label: "Ingrédients", placeholder: "--Ingrédients--", input_html: { class: 'form-field'} %></div>
+                    <div class="mb-2"><%= f.input :instruction, label: "Préparation", placeholder: "--Préparation--", input_html: { class: 'form-field'} %></div>
                   <div class="mb-2" ><%= f.input :meal, label: false, collection: ["--choisir--", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: "--choisir--", input_html: { class: 'form-control' } %></div>
               <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 form-button custom-color-button" %></div>
           <% end %>
