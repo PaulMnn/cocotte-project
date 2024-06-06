@@ -6,6 +6,15 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR instruction ILIKE :query"
+      @recipes = @recipes.where(sql_subquery, query: "%#{params[:query]}%")
+    end
+
+    if params[:meal].present?
+      @recipes = @recipes.where(meal: params[:meal])
+    end
   end
 
   def new
@@ -15,10 +24,16 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
+
+    # if params[:recipe][:photo].present?
+    #   upload_result = Cloudinary::Uploader.upload(params[:recipe][:photo].path)
+    #   @recipe.picture_url = upload_result['secure_url']
+    # end
+
     if @recipe.save
-      redirect_to recipe_path(@recipe)
+      redirect_to @recipe, notice: "Recette bien créée"
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -28,13 +43,23 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+
+    if params[:recipe][:photo].present?
+      upload_result = Cloudinary::Uploader.upload(params[:recipe][:photo].path)
+      @recipe.picture_url = upload_result['secure_url']
+    end
+
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: "Recette bien mise à jour"
+    else
+      render :edit
+    end
   end
+
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :meal, :photo)
+    params.require(:recipe).permit(:title, :ingredient, :instruction, :meal, :photo)
   end
 end

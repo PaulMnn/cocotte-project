@@ -1,0 +1,23 @@
+.filter-display{
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 36px;
+
+
+}
+
+.filter-display:hover {
+  color: white;
+}
+
+.search-display{
+  background-color: white;
+  color: black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}

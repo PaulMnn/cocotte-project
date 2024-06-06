@@ -1,7 +1,7 @@
 <%= simple_form_for(@recipe) do |f| %>
-            <div class="mb-2 d-flex justify content-end"><%= f.input :picture, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
+            <div class="mb-2 d-flex justify content-end"><%= f.input :photo, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
              <label for="icon-upload" class="icon-custom-button">
-                <span>Choisir un fichier</span>
+                <span>Charger une photo</span>
               <i class="fa-solid fa-image"></i>
                   </label>
                     </div>

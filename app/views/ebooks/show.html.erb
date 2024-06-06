@@ -1,0 +1,30 @@
+<div class="container form-background-grey py-4">
+  <div class="row justify-content-center blue-grey-background-form">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="form-frame p-4 mx-4">
+        <h3 class="my-4 text-center"><%= @ebook.ebook_title %></h3>
+          <div>
+            <% if @recipages.present? %>
+              <% @recipages.each do |recipage| %>
+                <a href="<%= recipe_path(recipage.recipe) %>" class="card row mx-0">
+                  <div class="card-image col-4">
+                    <% if recipage.recipe.photo.attached? %>
+                      <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
+                    <% end %>
+                  </div>
+                  <div class="card-content col-4">
+                    <h3><%= recipage.recipe.title %></h3>
+                    <p><%= recipage.templating %></p>
+                  </div>
+                  <div class="card-arrow col-4">
+                    <i class="bi bi-arrow-right-square-fill"></i>
+                  </div>
+                </a>
+              <% end %>
+            <% else %>
+              <p>No recipages available for this ebook.</p>
+            <% end %>
+          </div>
+    </div>
+  </div>
+</div>

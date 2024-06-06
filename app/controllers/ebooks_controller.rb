@@ -1,9 +1,13 @@
 class EbooksController < ApplicationController
   def show
     @ebook = Ebook.find(params[:id])
+    @recipages = @ebook.recipages
   end
 
   def index
+    @recipes_count = Recipe.count
+    @ebooks_count = Ebook.count
+    @printed_books_count = Ebook.count
     @ebooks = Ebook.all
   end
 
