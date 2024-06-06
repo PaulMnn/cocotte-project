@@ -5,15 +5,57 @@
         <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
           <%= simple_form_for(@ebook) do |f| %>
             <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: 'form-field'} %>
-           <div>
-           <label>
-           <p>Style du template</p>
-           <img src="background_cocotte.jpg">
-           </label>
-           </div>
-           <%= f.input :theme, as: :text, label: false, placeholder: "theme" %>
-          <%= f.button :submit, "enregistrer", class: "btn btn-primary rounded-5 black-create-ebook" %>
-        <% end %>
+
+<div class="form-container mb-5">
+  <div class="d-flex justify-content-center">
+    <div class="card">
+      <label>
+        <p class="text-center">Theme de l'Ebook</p>
+          <div class="col-12 theme-border">
+            <%= f.radio_button :theme, "template 1", class: 'theme-radio' %>
+            </div>
+            <div class="col-12 theme-border">
+          <%= f.radio_button :theme, "template 2", class: 'theme-radio' %>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-primary rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Choisis tes recettes
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="modal-body">
+                <%= simple_form_for(@ebook) do |f| %>
+                  <%= f.simple_fields_for :recipages do |recipages_form| %>
+                    <%= recipages_form.collection_check_boxes :recipe_ids, @recipes, :id, :title do |r| %>
+                      <div class="form-check">
+                        <%= r.check_box(class: 'form-check-input') %>
+                        <%= r.label(class: 'form-check-label') %>
+                           <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+                            <%= button_tag "Valider", type: "submit", class: "btn btn-primary" %>
+                          </div>
+                    </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+  </div>
+</div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
