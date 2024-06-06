@@ -1,18 +1,27 @@
 <div class="wrapper">
   <div class="navbar">
-    <%= link_to new_recipe_path do %>
+    <%= link_to recipes_path do %>
       <i class="fas fa-home icon-home"></i>
     <% end %>
     <i class="fa-solid fa-book icon-book"></i>
 
     <div class="circle">
       <i class="fas fa-plus plus-icon"></i>
-      <%= link_to new_recipe_path do %>
-        <i class="fa-sharp fa-solid fa-pen social mt-2"></i>
-      <% end %>
-      <i class="fa-solid fa-link social mt-2"></i>
-      <i class="fa-solid fa-camera social mt-2"></i>
+      <i class="fa-sharp fa-solid fa-pen social mt-2" data-link="/recipes/new"></i>
+      <i class="fa-solid fa-link social mt-2" data-link="/recipes"></i>
+      <i class="fa-solid fa-camera social mt-2" data-link="/recipes"></i>
     </div>
     <div class="circleBackground"></div>
   </div>
 </div>
+
+
+<script>
+  var icons = document.querySelectorAll(".circle i");
+
+  icons.forEach(function(icon) {
+    icon.addEventListener("click", function() {
+      window.location.href = this.getAttribute("data-link");
+    });
+  });
+</script>
