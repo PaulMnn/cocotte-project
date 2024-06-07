@@ -63,6 +63,18 @@
   transition: transform 0.2s;
 }
 
+.stats-big-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.stats-big-card .edit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .stats-big-card:hover {
   transform: scale(1.05);
 }
