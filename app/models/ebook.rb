@@ -1,6 +1,5 @@
 class Ebook < ApplicationRecord
   belongs_to :user
-  has_many :recipages
   has_many :recipes, through: :recipages
   validates :theme, presence: true
   validates :ebook_title, presence: true
@@ -18,4 +17,5 @@ class Ebook < ApplicationRecord
     recipes.where(meal: 'Dessert').count
   end
 
+  accepts_nested_attributes_for :recipages
 end
