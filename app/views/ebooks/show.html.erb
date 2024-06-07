@@ -2,31 +2,41 @@
   <div class="row justify-content-center blue-grey-background-form">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
-        <h3 class="my-4 text-center"><%= @ebook.ebook_title %></h3>
-          <div>
-            <% if @recipages.present? %>
-              <% @recipages.each do |recipage| %>
-                <a href="<%= recipe_path(recipage.recipe) %>" class="card-recipages row mx-0">
-                  <div class="card-recipages-image col-3">
-                    <% if recipage.recipe.photo.attached? %>
-                      <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
-                    <% end %>
-                  </div>
-                  <div class="card-recipages-content col-5">
-                    <h3><%= recipage.recipe.title %></h3>
-                  </div>
-                  <div class="card-recipages-arrow col-2">
-                    <i class="bi bi-arrow-right-square-fill"></i>
-                  </div>
-                  <div class="card-recipages-delete col-2">
-                    <i class="bi bi-trash-fill"></i>
-                  </div>
-                </a>
-              <% end %>
-            <% else %>
-              <p>No recipages available for this ebook.</p>
+        <div class="text-center mb-3">
+          <%= link_to "Prévisualiser mon e-book", "https://www.canva.com/design/DAEQhusF-jI/doc1atMkZ9lQONcQDSmrOg/view", class: "btn btn-primary preview-button text-white" %>
+        </div>
+        <div class="card-title position-relative">
+          <%= link_to ebooks_path, class: "arrow-link position-absolute" do %>
+            <i class="fa-solid fa-arrow-left-long"></i>
+          <% end %>
+          <h3 class="my-4 text-center">
+            <%= @ebook.ebook_title %>
+          </h3>
+        </div>
+        <div>
+          <% if @recipages.present? %>
+            <% @recipages.each do |recipage| %>
+              <a href="<%= recipe_path(recipage.recipe) %>" class="card-recipages row mx-0">
+                <div class="card-recipages-image col-3">
+                  <% if recipage.recipe.photo.attached? %>
+                    <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
+                  <% end %>
+                </div>
+                <div class="card-recipages-content col-5">
+                  <h3><%= recipage.recipe.title %></h3>
+                </div>
+                <div class="card-recipages-arrow col-2">
+                  <i class="bi bi-arrow-right-square-fill"></i>
+                </div>
+                <div class="card-recipages-delete col-2">
+                  <i class="bi bi-trash-fill"></i>
+                </div>
+              </a>
             <% end %>
-          </div>
+          <% else %>
+            <p>No recipages available for this ebook.</p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
