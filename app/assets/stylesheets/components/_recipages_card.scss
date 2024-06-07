@@ -49,3 +49,34 @@
   color: #151414;
   font-size: 18px;
 }
+
+.arrow-link {
+  color: black;
+  float: left;
+  margin-right: 10px;
+}
+
+.margin-title {
+  margin-left: -10px;
+  align-items: center;
+}
+
+.preview-button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.arrow-link {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
