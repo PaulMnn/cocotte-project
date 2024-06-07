@@ -12,11 +12,9 @@ class EbooksController < ApplicationController
   end
 
   def new
-    @recipes = Recipe.all
+    # @recipes = Recipe.all
     @ebook = Ebook.new
-    @recipages = current_user.recipes.map do |recipe|
-      Recipage.new(recipe: recipe)
-    end
+    @ebook.recipages.build
   end
 
   def create
@@ -49,6 +47,6 @@ class EbooksController < ApplicationController
   private
 
   def ebook_params
-    params.require(:ebook).permit(:ebook_title, :theme)
+    params.require(:ebook).permit(:ebook_title, :theme, recipages_attributes: [:recipe_id])
   end
 end
