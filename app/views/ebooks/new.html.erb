@@ -8,28 +8,31 @@
 
             <div class="form-container mb-5">
               <div class="d-flex justify-content-center">
-                <div class="card">
-                  <label class="label-full-width">
+                <div class="theme-choice">
+
+                  <div class="label-full-width">
                     <p class="text-center">Theme de l'Ebook</p>
-                      <div class="col-12 theme-border">
-                        <%= f.radio_button :theme, "template 1", class: "theme-radio", id:"theme-1" %>
-                        <label for="theme-1">
+                      <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+
+                        <%# f.radio_button :theme, label: "template 1", class: "theme-radio", id:"theme-1" %>
+                        <%# <label for="theme-1">
                         <%= image_tag("background_cocotte.jpg", alt: "theme-numero-1") %>
-                        </label>
-                        </div>
-                        <div class="col-12 theme-border">
-                      <%= f.radio_button :theme, "template 2", class: "theme-radio", id:"theme-2" %>
-                      <label for="theme-2">
+                        <%# </label> %>
+
+
+                      <%# f.radio_button :theme, label: "template 2", class: "theme-radio", id:"theme-2" %>
+                      <%# <label for="theme-2">
                         <%= image_tag("background_cocotte.jpg", alt: "theme-numero-2") %>
-                        </label>
-                    </div>
-                  </label>
+                        <%# </label> %>
+
+                  </div>
+
                 </div>
               </div>
             </div>
 
 
-            <button type="button" class="btn btn-primary rounded-5 mx-5 mt-3 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary rounded-5 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Choisis tes recettes
             </button>
 
@@ -43,7 +46,7 @@
                           <div class="modal-body">
                               <% Recipe.all.each do |recipe| %>
                                 <%= f.simple_fields_for :recipages do |r| %>
-                                  <%= r.input :recipe_id, as: :radio_buttons, collection: [recipe], :include_hidden => false %>
+                                  <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe], :include_hidden => false %>
                                 <% end %>
                               <% end %>
 
