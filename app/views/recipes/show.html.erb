@@ -8,17 +8,20 @@
 
 <div class="top-bar row justify-content-between align-items-center">
 
-  <div class="col-2">
+  <div class="col-3">
       <%= link_to "←", recipes_path, class: "back-arrow" %>
   </div>
   <div class="col-6 text-center">
       <h1 class="recipe-title"><%= @recipe.title %></h1>
   </div>
-  <div class="col-2">
-      <%= link_to "✎", edit_recipe_path(@recipe), class: "edit-button" %>
-  </div>
-  <div class="col-2">
-      <%= link_to "🗑", recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "T'es sûr chef ?" }, class: "delete-button" %>
+  <div class="col-3 icon-container text-right">
+    <%= link_to edit_recipe_path(@recipe), class: "delete-button" do %>
+      <i class="fa-solid fa-pencil"></i>
+    <% end %>
+    <%= link_to recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "Vous êtes sûr chef ? 👩‍🍳" }, class: "delete-button" do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
+</div>
   </div>
 </div>
 
