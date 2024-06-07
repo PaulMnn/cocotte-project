@@ -1,31 +1,36 @@
 <div class="container">
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="form">
-    <%= form_with url: recipes_path, method: :get, class: "form-control form-input d-flex" do %>
-      <button type="submit" class="btn btn-default">
-        <i class="fa fa-search"></i>
-      </button>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Rechercher une recette..."
-        %>
-    <% end %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+      <%= form_with url: recipes_path, method: :get, class: "form-control form-input d-flex" do %>
+        <button type="submit" class="btn btn-default">
+          <i class="fa fa-search"></i>
+        </button>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-bar",
+          placeholder: "Rechercher une recette..."
+          %>
+      <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row mt-1">
-  <div class="col-md-6">
-    <%= form_with url: recipes_path, method: :get, class: "d-flex align-items-center", id: "meal-filter-form" do %>
-      <%= select_tag :meal, options_for_select(["Type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: params[:meal]), class: "form-control search-display", onchange: "this.form.submit();" %>
-         <%= submit_tag "Filtrer", name: "", class: "btn btn-default filter-display" %>
 
-    <% end %>
+
+  <div class="mt-1">
+    <div class="row">
+      <%= form_with url: recipes_path, method: :get, class: "d-flex align-items-center", id: "meal-filter-form" do %>
+        <div class="filter-icon col-1">
+          <i class="fa-solid fa-sort-down fa-2X"></i>
+        </div>
+        <div class="filter-list col-11">
+          <%= select_tag :meal, options_for_select(["Type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: params[:meal]), class: "form-control search-display", onchange: "this.form.submit();" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 
 
   <div>

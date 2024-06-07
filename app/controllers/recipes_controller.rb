@@ -9,11 +9,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
 
     if params[:query].present?
-      sql_subquery = "title ILIKE :query OR instruction ILIKE :query"
-      @recipes = @recipes.where(sql_subquery, query: "%#{params[:query]}%")
+      @recipes = @recipes.search_by_title_and_ingredient_and_instruction(params[:query])
     end
 
-    if params[:meal].present?
+    if params[:meal].present? && params[:meal] != "Type de plat"
       @recipes = @recipes.where(meal: params[:meal])
     end
   end

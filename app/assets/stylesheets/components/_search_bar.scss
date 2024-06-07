@@ -14,7 +14,7 @@
 .form .fa-search{
   position: absolute;
   top:13px;
-  left: 20px;
+  left: 17px;
   color: #9ca3af;
 }
 
@@ -30,4 +30,8 @@
   height: 40px;
   text-indent: 33px;
   border-radius: 5px;
+}
+
+.search-bar::placeholder{
+  color: darkgray !important
 }
