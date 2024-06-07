@@ -14,30 +14,36 @@
     </div>
   </div>
 
-  <div class= "mt-3 d-flex justify-content-center">
+  <div class="mt-3 d-flex justify-content-center">
     <%= link_to "Créer un E-Book ", new_ebook_path, class: "btn btn-ghost bg-white border-0" %>
   </div>
 
+  <div>
+    <h3 class="mb-4 mt-3 ms-4 text-white">Mes E-Books</h3>
+  </div>
+
   <% @ebooks.each do |ebook| %>
-    <div class="stats-big-card mt-3">
-      <div class="image-container-card">
-        <% if ebook.photo.attached? %>
-          <%= cl_image_tag ebook.photo.key, crop: :fill %>
-        <% else %>
-          <%= image_tag('background_cocotte.jpg', alt: 'background-image') %>
-        <% end %>
-        <button class="edit-button">
-          <i class="fa-regular fa-pen-to-square"></i>
-        </button>
-      </div>
-      <div class="text-container mt-2">
-        <h2><%= ebook.ebook_title %></h2>
-        <div class="info mb-4">
-          <span>12 plats</span>
-          <span>4 entrées</span>
-          <span>7 desserts</span>
+    <%= link_to ebook_path(ebook), class: "stats-big-card-link" do %>
+      <div class="stats-big-card mt-3">
+        <div class="image-container-card">
+          <% if ebook.photo.attached? %>
+            <%= cl_image_tag ebook.photo.key, crop: :fill %>
+          <% else %>
+            <%= image_tag('background_cocotte.jpg', alt: 'background-image') %>
+          <% end %>
+          <button class="edit-button">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </div>
+        <div class="text-container mt-2">
+          <h2><%= ebook.ebook_title %></h2>
+          <div class="info mb-4">
+            <span><%= ebook.dishes_count %> plats</span>
+            <span><%= ebook.starters_count %> entrées</span>
+            <span><%= ebook.desserts_count %> desserts</span>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </body>

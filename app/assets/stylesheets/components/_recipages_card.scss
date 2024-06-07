@@ -1,0 +1,51 @@
+.card-recipages {
+  flex-direction: row;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  width: 100%;
+  height: 70px; /* Decreased height */
+  text-decoration: none;
+  background-color: white;
+  color: inherit;
+  transition: transform 0.2s;
+  margin: 15px;
+  border: none;
+}
+
+.card-recipages:hover {
+  transform: scale(1.05);
+}
+.card-recipages img {
+  width: 60px; /* Decreased width */
+  height: 60px; /* Decreased height */
+  object-fit:cover;
+  border-radius: 18px;
+}
+
+.card-recipages-image {
+  padding: 3px;
+  margin-top: 2px;
+}
+
+.card-recipages-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-recipages-content h3 {
+  margin: 0;
+  font-size: 12px; /* Decreased font size */
+  font-weight: normal; /* Removed bold */
+  text-align:start;
+}
+
+.card-recipages-arrow,
+.card-recipages-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #151414;
+  font-size: 18px;
+}

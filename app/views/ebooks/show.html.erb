@@ -6,18 +6,20 @@
           <div>
             <% if @recipages.present? %>
               <% @recipages.each do |recipage| %>
-                <a href="<%= recipe_path(recipage.recipe) %>" class="card row mx-0">
-                  <div class="card-image col-4">
+                <a href="<%= recipe_path(recipage.recipe) %>" class="card-recipages row mx-0">
+                  <div class="card-recipages-image col-3">
                     <% if recipage.recipe.photo.attached? %>
                       <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
                     <% end %>
                   </div>
-                  <div class="card-content col-4">
+                  <div class="card-recipages-content col-5">
                     <h3><%= recipage.recipe.title %></h3>
-                    <p><%= recipage.templating %></p>
                   </div>
-                  <div class="card-arrow col-4">
+                  <div class="card-recipages-arrow col-2">
                     <i class="bi bi-arrow-right-square-fill"></i>
+                  </div>
+                  <div class="card-recipages-delete col-2">
+                    <i class="bi bi-trash-fill"></i>
                   </div>
                 </a>
               <% end %>
@@ -25,6 +27,7 @@
               <p>No recipages available for this ebook.</p>
             <% end %>
           </div>
+      </div>
     </div>
   </div>
 </div>

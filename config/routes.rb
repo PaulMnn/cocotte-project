@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   resources :ebooks, except: [:delete, :update] do
       resources :recipages, only: [:create]
     end
+
+  resources :recipes do
+      resources :recipages, only: [:destroy]
+    end
 end
