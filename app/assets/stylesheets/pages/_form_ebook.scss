@@ -1,3 +1,18 @@
+.form-background-grey {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.form-frame {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 700px;
+  margin: auto;
+  min-height: 80vh;
+  margin-top: 40px;
+}
+
 .ebook-form {
   background-image: url('background_cocotte.jpg');
   background-size: cover;
@@ -16,13 +31,22 @@
 }
 
 .theme-border {
+  text-align:center;
+  padding: 10px;
   width: 100%;
   margin-bottom: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.ebook-valid-black {
-  background-color: black;
-  position:bottom;
+.theme-radio {
+
 }
+
+.open-modal-black {
+  background-color: black;
+ }
+
+ .label-full-width {
+  width: 100%;
+ }

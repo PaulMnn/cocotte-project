@@ -1,60 +1,62 @@
-<div class="container recipe_card ebook-form">
+<div class="container ebook-form form-background-grey">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
         <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
           <%= simple_form_for(@ebook) do |f| %>
-            <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: 'form-field'} %>
+            <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: "form-field"} %>
 
-<div class="form-container mb-5">
-  <div class="d-flex justify-content-center">
-    <div class="card">
-      <label>
-        <p class="text-center">Theme de l'Ebook</p>
-          <div class="col-12 theme-border">
-            <%= f.radio_button :theme, "template 1", class: 'theme-radio' %>
-            </div>
-            <div class="col-12 theme-border">
-          <%= f.radio_button :theme, "template 2", class: 'theme-radio' %>
-        </div>
-      </label>
-    </div>
-  </div>
-</div>
-
-
-<button type="button" class="btn btn-primary rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Choisis tes recettes
-</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-              <div class="modal-body">
-                <%= simple_form_for(@ebook) do |f| %>
-                  <%= f.simple_fields_for :recipages do |recipages_form| %>
-                    <%= recipages_form.collection_check_boxes :recipe_ids, @recipes, :id, :title do |r| %>
-                      <div class="form-check">
-                        <%= r.check_box(class: 'form-check-input') %>
-                        <%= r.label(class: 'form-check-label') %>
-                          </div>
-                          <% end %>
-                        <% end %>
-                      <% end %>
+            <div class="form-container mb-5">
+              <div class="d-flex justify-content-center">
+                <div class="card">
+                  <label class="label-full-width">
+                    <p class="text-center">Theme de l'Ebook</p>
+                      <div class="col-12 theme-border">
+                        <%= f.radio_button :theme, "template 1", class: "theme-radio", id:"theme-1" %>
+                        <label for="theme-1">
+                        <%= image_tag("background_cocotte.jpg", alt: "theme-numero-1") %>
+                        </label>
+                        </div>
+                        <div class="col-12 theme-border">
+                      <%= f.radio_button :theme, "template 2", class: "theme-radio", id:"theme-2" %>
+                      <label for="theme-2">
+                        <%= image_tag("background_cocotte.jpg", alt: "theme-numero-2") %>
+                        </label>
                     </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
-                        <%= button_tag "Valider", type: "submit", class: "btn btn-primary" %>
-                    </div>
+                  </label>
                 </div>
               </div>
             </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+            <button type="button" class="btn btn-primary rounded-5 mx-5 mt-3 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Choisis tes recettes
+            </button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                          <div class="modal-body">
+                              <% Recipe.all.each do |recipe| %>
+                                <%= f.simple_fields_for :recipages do |r| %>
+                                  <%= r.input :recipe_id, as: :radio_buttons, collection: [recipe], :include_hidden => false %>
+                                <% end %>
+                              <% end %>
+
+                                </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
+                                    <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
+                                </div>
+                                <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
