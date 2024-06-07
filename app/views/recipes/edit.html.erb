@@ -2,5 +2,8 @@
   <div class="row justify-content-center blue-grey-background-form">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
+        <%= link_to recipes_path do %>
+          <i class="fa-regular fa-circle-xmark text-black"></i>
+        <% end %>
         <h3 class="my-4 text-center">Modifier une recette</h3>
           <%= render "form", recipe: @recipe %>
