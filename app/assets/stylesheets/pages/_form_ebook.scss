@@ -39,14 +39,29 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.theme-radio {
-
-}
 
 .open-modal-black {
   background-color: black;
+  width: 100%;
+ }
+
+ .modal-footer {
+  padding-bottom: 100px;
+ }
+
+ .form-check {
+  width: 95%;
+  background-color: rgb(233, 231, 231);
+  border-radius: 15px;
+ }
+
+ .theme-choice {
+  width:100%;
+  text-align: center;
+  border-radius: 15px;
  }
 
  .label-full-width {
-  width: 100%;
+ border: 1px solid;
+ border-radius: 15px;
  }
