@@ -1,39 +1,55 @@
-<div class="recipe-show-container" data-controller="move-instructions-stamp">
+<body id="show-page">
+
+<div class="container-show">
   <% if @recipe.photo.attached? %>
-    <div class="recipe-photo">
-      <%= cl_image_tag @recipe.photo.key, class: "background-image" %>
-      <div class="overlay"></div>
-    </div>
+    <%= cl_image_tag @recipe.photo.key, class: "background-image" %>
   <% end %>
 
-<div class="top-bar row justify-content-between align-items-center">
+  <div class="top-bar row justify-content-between align-items-center">
 
-  <div class="col-3">
-      <%= link_to "←", recipes_path, class: "back-arrow" %>
+    <div class="col-3">
+        <%= link_to recipes_path, class: "delete-button" do %>
+          <i class="fa-solid fa-arrow-left"></i>
+        <% end %>
+    </div>
+
+    <div class="col-6 text-center">
+        <h2 class="recipe-title-show"><%= @recipe.title %></h2>
+    </div>
+
+    <div class="col-3 icon-container text-right">
+      <%= link_to edit_recipe_path(@recipe), class: "delete-button" do %>
+        <i class="fa-solid fa-pencil"></i>
+      <% end %>
+      <%= link_to recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "Vous êtes sûr chef ? 👩‍🍳" }, class: "delete-button" do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </div>
   </div>
-  <div class="col-6 text-center">
-      <h1 class="recipe-title"><%= @recipe.title %></h1>
-  </div>
-  <div class="col-3 icon-container text-right">
-    <%= link_to edit_recipe_path(@recipe), class: "delete-button" do %>
-      <i class="fa-solid fa-pencil"></i>
-    <% end %>
-    <%= link_to recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "Vous êtes sûr chef ? 👩‍🍳" }, class: "delete-button" do %>
-      <i class="fa-solid fa-trash"></i>
-    <% end %>
-</div>
-  </div>
-</div>
 
+  <div class="absolute-show">
+    <div class="transparent-div"></div>
+    <div class="content-div">
 
+      <div class="container-top-content row justify-content-between align-items-center">
+        <div class="col-3">
+        </div>
 
-  <div class="recipe-content" data-move-instructions-stamp-target="content" data-action="click->move-instructions-stamp#moveCard">
-    <div class="meal-label"><%= @recipe.meal %></div>
-    <div class="texte-recette">
-      <h2>Ingrédients</h2>
-      <p><%= @recipe.ingredient %></p>
-      <h2>Instructions</h2>
-      <p><%= @recipe.instruction %></p>
+        <div class="handle-bar col-6 text-center">
+          <i class="fa-solid fa-grip-lines"></i>
+        </div>
+
+        <div class="meal-label col-3 text-center">
+          <%= @recipe.meal %>
+        </div>
+      </div>
+
+      <h3>Ingrédients</h3>
+      <p><%= simple_format(@recipe.ingredient) %></p>
+      <h3>Instructions</h3>
+      <p><%= simple_format(@recipe.instruction) %></p>
+
     </div>
   </div>
 </div>
+</body>
