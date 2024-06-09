@@ -26,6 +26,84 @@ users << User.create!(email: 'user5@example.com', password: 'password123', passw
 # Create recipes
 
 recipe = Recipe.new(
+  title: 'Lasagnes saumon/épinards',
+  instruction: "1) Faites revenir l'oignon et l'ail hachés dans l'huile d'olive jusqu'à ce qu'ils soient dorés. Ajoutez les épinards, assaisonnez avec sel, poivre et muscade, et faites cuire jusqu'à ce qu'ils soient fanés. Réservez.
+  2) Coupez le saumon en petits dés, mélangez avec la crème fraîche, salez et poivrez.
+  3) Préchauffez le four à 180°C. Étalez une couche de béchamel au fond d'un plat à gratin, ajoutez des feuilles de lasagnes, une couche d'épinards, puis de saumon, et recouvrez de béchamel. Répétez jusqu'à épuisement des ingrédients, en terminant par une couche de béchamel.
+  4) Parsemez de fromage râpé et enfournez pendant 30 à 40 minutes jusqu'à ce que les lasagnes soient dorées et cuites. Laissez reposer quelques minutes avant de servir.",
+  meal: 'Plat',
+  ingredient: " - 300g de feuilles de lasagnes
+  - 400g de saumon frais
+  - 300g d'épinards frais
+  - 1 oignon
+  - 2 gousses d'ail
+  - 500ml de béchamel
+  - 200g de fromage râpé (gruyère ou mozzarella)
+  - 200ml de crème fraîche
+  - 2 cuillères à soupe d'huile d'olive
+  - Sel et poivre
+  - Une pincée de muscade",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934067/IMG_9103_axjksb.jpg")
+recipe.photo.attach(io: file, filename: "lasagnes-saumon-epinards.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Tarte aux fraises de maman',
+  instruction: "Pour 4 personnes
+  1) Mélangez la farine, le sucre et le sel dans un bol. Ajoutez le beurre froid coupé en petits morceaux et travaillez du bout des doigts jusqu'à obtenir une consistance sableuse. Incorporez l'œuf et l'eau froide pour former une boule de pâte. Enveloppez-la dans du film plastique et réfrigérez pendant 30 minutes.
+  2) Préchauffez le four à 180°C. Étalez la pâte sur un plan de travail fariné et foncez un moule à tarte. Piquez le fond avec une fourchette, recouvrez de papier cuisson et de poids de cuisson (ou de haricots secs), puis faites cuire à blanc pendant 15 minutes. Retirez les poids et le papier, puis poursuivez la cuisson 10 minutes jusqu'à ce que la pâte soit dorée. Laissez refroidir.
+  3) Étalez la crème pâtissière refroidie sur le fond de tarte cuit et refroidi.
+  4) Lavez et équeutez les fraises, coupez-les en deux si elles sont grosses. Disposez les fraises harmonieusement sur la crème pâtissière. Si désiré, préparez le nappage selon les instructions du sachet et badigeonnez-en les fraises pour une finition brillante. Réfrigérez la tarte avant de servir.",
+  meal: 'Dessert',
+  ingredient: " Pour la pâte :
+  250g de farine
+  125g de beurre froid
+  50g de sucre en poudre
+  1 œuf
+  Une pincée de sel
+  2-3 cuillères à soupe d'eau froide
+
+  Pour la garniture :
+  500g de fraises fraîches
+  200ml de crème pâtissière
+  2 cuillères à soupe de sucre en poudre
+  1 sachet de nappage pour tarte (facultatif)",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934066/IMG_4829_eix6wp.jpg")
+recipe.photo.attach(io: file, filename: "tarte-aux-fraises.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Pizza sans féculent 🥦',
+  instruction: "Pour 4 personnes
+  1) Préchauffez le four à 200°C. Coupez le brocoli en petits bouquets et mixez-les dans un robot culinaire jusqu'à obtenir une consistance de riz. Faites cuire le brocoli au micro-ondes pendant 5 minutes ou à la vapeur jusqu'à ce qu'il soit tendre. Laissez refroidir puis pressez-le dans un torchon propre pour enlever l'excès d'eau.
+  2) Mélangez le brocoli égoutté, les œufs, le fromage râpé, l'origan, le sel et le poivre dans un bol. Étalez ce mélange sur une plaque de cuisson recouverte de papier sulfurisé en formant un disque de pâte. Enfournez pendant 20 minutes ou jusqu'à ce que la pâte soit dorée et ferme.
+  3) Retirez la pâte du four et étalez la sauce tomate dessus. Parsemez de mozzarella râpée et ajoutez le pepperoni ou les légumes tranchés. Arrosez d'un filet d'huile d'olive.
+  4) Remettez au four et faites cuire pendant 10 minutes supplémentaires ou jusqu'à ce que le fromage soit fondu et doré. Garnissez de feuilles de basilic frais avant de servir.",
+  meal: 'Plat',
+  ingredient: " Pour la pâte :
+  1 gros brocoli (environ 500g)
+  2 œufs
+  100g de fromage râpé (mozzarella ou parmesan)
+  1 cuillère à café d'origan séché
+  Sel et poivre au goût
+
+  Pour la garniture :
+  200g de sauce tomate
+  150g de mozzarella râpée
+  100g de pepperoni ou de légumes tranchés (selon préférence)
+  1 cuillère à soupe d'huile d'olive
+  Feuilles de basilic frais pour la garniture (facultatif)",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934043/IMG_2548_pexcnt.jpg")
+recipe.photo.attach(io: file, filename: "pizza-sans-feculent.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
   title: 'Spaghetti Bolognese',
   instruction: "1) Faites bouillir une grande casserole d'eau salée et ajoutez 400g de spaghettis.
 2) Faites chauffer 2 cuillères à soupe d'huile d'olive dans une grande poêle et faites revenir 1 oignon et 2 gousses d'ail jusqu'à ce qu'ils soient dorés.
