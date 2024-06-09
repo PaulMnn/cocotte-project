@@ -5,6 +5,28 @@
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
+@font-face {
+  font-family: 'Hibernate';
+  src: url('/assets/fonts/Hibernate.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Motley';
+  src: url('/assets/fonts/Motley.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.motley-font-class {
+  font-family: 'Motley', sans-serif;
+}
+
+.hibernate-font-class {
+  font-family: 'Hibernate', sans-serif;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
