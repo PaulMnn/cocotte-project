@@ -50,7 +50,7 @@ recipe.photo.attach(io: file, filename: "lasagnes-saumon-epinards.jpg", content_
 recipe.save
 
 recipe = Recipe.new(
-  title: 'Tarte aux fraises de maman',
+  title: 'Tarte aux fraises de maman 💟',
   instruction: "Pour 4 personnes
   1) Mélangez la farine, le sucre et le sel dans un bol. Ajoutez le beurre froid coupé en petits morceaux et travaillez du bout des doigts jusqu'à obtenir une consistance sableuse. Incorporez l'œuf et l'eau froide pour former une boule de pâte. Enveloppez-la dans du film plastique et réfrigérez pendant 30 minutes.
   2) Préchauffez le four à 180°C. Étalez la pâte sur un plan de travail fariné et foncez un moule à tarte. Piquez le fond avec une fourchette, recouvrez de papier cuisson et de poids de cuisson (ou de haricots secs), puis faites cuire à blanc pendant 15 minutes. Retirez les poids et le papier, puis poursuivez la cuisson 10 minutes jusqu'à ce que la pâte soit dorée. Laissez refroidir.
@@ -104,6 +104,30 @@ recipe.photo.attach(io: file, filename: "pizza-sans-feculent.jpg", content_type:
 recipe.save
 
 recipe = Recipe.new(
+  title: 'Welsh du nord',
+  instruction: "Pour 4 personnes
+  1) Préchauffez le four à 200°C. Faites griller les tranches de pain jusqu'à ce qu'elles soient dorées. Disposez une tranche de jambon sur chaque tranche de pain grillé et placez-les dans un plat allant au four.
+  2) Dans une casserole, faites fondre le beurre à feu moyen. Ajoutez la farine et mélangez pour obtenir un roux. Versez progressivement la bière en remuant constamment jusqu'à obtenir une sauce lisse et épaisse.
+  3) Ajoutez le cheddar râpé, la moutarde, la sauce Worcestershire, le sel et le poivre. Continuez de remuer jusqu'à ce que le fromage soit complètement fondu et que la sauce soit homogène.
+  4) Versez la sauce au fromage sur les tranches de pain et de jambon. Enfournez pendant 10 minutes ou jusqu'à ce que le fromage soit doré et bouillonnant. Si désiré, faites cuire les œufs au plat et déposez-en un sur chaque portion avant de servir.",
+  meal: 'Plat',
+  ingredient: " 4 tranches de pain de campagne
+  200g de cheddar râpé
+  4 tranches de jambon
+  1 cuillère à soupe de moutarde de Dijon
+  200ml de bière blonde
+  50g de beurre
+  2 cuillères à soupe de farine
+  1 cuillère à soupe de sauce Worcestershire
+  4 œufs (facultatif)
+  Sel et poivre au goût",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934059/IMG_4628_nbtkxm.jpg")
+recipe.photo.attach(io: file, filename: "welsh.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
   title: 'Spaghetti Bolognese',
   instruction: "1) Faites bouillir une grande casserole d'eau salée et ajoutez 400g de spaghettis.
 2) Faites chauffer 2 cuillères à soupe d'huile d'olive dans une grande poêle et faites revenir 1 oignon et 2 gousses d'ail jusqu'à ce qu'ils soient dorés.
@@ -130,7 +154,95 @@ recipe.photo.attach(io: file, filename: "spaghetti.jpg", content_type: "photo/pn
 recipe.save
 
 recipe = Recipe.new(
-  title: 'Salade César',
+  title: 'Tarte fine carottes/burrata',
+  instruction: "1) Préchauffez le four à 200°C. Déroulez la pâte feuilletée sur une plaque de cuisson recouverte de papier sulfurisé. Piquez la pâte avec une fourchette.
+  2) Épluchez les carottes et coupez-les en fines rondelles. Mélangez-les avec l'huile d'olive, le miel, le vinaigre balsamique, le thym, le sel et le poivre.
+  3) Disposez les rondelles de carottes sur la pâte feuilletée en une seule couche uniforme. Enfournez pendant 20-25 minutes ou jusqu'à ce que la pâte soit dorée et croustillante.
+  4) Sortez la tarte du four et laissez légèrement refroidir. Déchirez les burratas en morceaux et répartissez-les sur la tarte. Garnissez avec des feuilles de roquette avant de servir.",
+  meal: 'Plat',
+  ingredient: "1 pâte feuilletée
+  4 carottes moyennes
+  2 burratas
+  2 cuillères à soupe d'huile d'olive
+  1 cuillère à soupe de miel
+  1 cuillère à soupe de vinaigre balsamique
+  1 cuillère à café de thym frais
+  Sel et poivre au goût
+  Quelques feuilles de roquette (pour garnir)",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934052/IMG_4231_u05bf6.jpg")
+recipe.photo.attach(io: file, filename: "tarte-fine-carottes-burrata.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Tartines pêche/burrata ☀️',
+  instruction: "1) Préchauffez le four à 200°C. Coupez les pêches en quartiers et mélangez-les avec une cuillère à soupe d'huile d'olive, le miel, le sel et le poivre. Étalez les pêches sur une plaque de cuisson et rôtissez-les pendant 15-20 minutes jusqu'à ce qu'elles soient tendres et caramélisées.
+  2) Faites griller les tranches de pain de campagne jusqu'à ce qu'elles soient dorées et croustillantes.
+  3) Frottez les tranches de pain grillé avec un peu d'huile d'olive. Disposez les quartiers de pêches rôties sur chaque tranche.
+  4) Déchirez la burrata en morceaux et répartissez-les sur les pêches. Ajoutez la roquette par-dessus et arrosez légèrement de vinaigre balsamique avant de servir.",
+  meal: 'Plat',
+  ingredient: "4 tranches de pain de campagne
+  2 pêches
+  1 burrata
+  1 tasse de roquette
+  2 cuillères à soupe d'huile d'olive
+  1 cuillère à soupe de vinaigre balsamique
+  1 cuillère à café de miel
+  Sel et poivre au goût",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934031/B3182B6C-1F0B-4924-9181-A3280B18397A_urnraj.jpg")
+recipe.photo.attach(io: file, filename: "tartine-peche-burrata.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Velouté butternut et oeuf mollet',
+  instruction: "1) Préchauffez le four à 200°C. Épluchez, épépinez et coupez la courge butternut en cubes. Émincez l'oignon et l'ail.
+  2) Disposez la courge, l'oignon et l'ail sur une plaque de cuisson, arrosez d'huile d'olive, salez et poivrez. Rôtissez au four pendant 25-30 minutes jusqu'à ce que les légumes soient tendres et légèrement caramélisés.
+  3) Faites chauffer le bouillon de légumes dans une grande casserole. Ajoutez les légumes rôtis et laissez mijoter pendant 10 minutes. Mixez jusqu'à obtenir une consistance lisse, puis incorporez la crème fraîche.
+  4) Faites cuire les œufs mollets en les plongeant dans de l'eau bouillante pendant 6 minutes, puis écalez-les. Servez le velouté dans des bols, ajoutez un œuf mollet au centre et parsemez de ciboulette ciselée avant de déguster.",
+  meal: 'Entrée',
+  ingredient: "1 courge butternut (environ 1 kg)
+  1 oignon
+  2 gousses d'ail
+  1 litre de bouillon de légumes
+  200 ml de crème fraîche
+  4 œufs
+  2 cuillères à soupe d'huile d'olive
+  Sel et poivre au goût
+  Quelques brins de ciboulette (pour garnir)",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934043/IMG_2793_kvrylf.jpg")
+recipe.photo.attach(io: file, filename: "oeuf-mollet-butternut.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Pavlova aux fraises de Lucie 🍓',
+  instruction: "1) Préchauffez le four à 120°C et chemisez une plaque de cuisson avec du papier sulfurisé. Tracez un cercle de 20 cm de diamètre sur le papier.
+  2) Fouettez les blancs d'œufs en neige ferme, puis incorporez progressivement le sucre en poudre jusqu'à ce que la meringue soit lisse et brillante. Ajoutez la fécule de maïs, le vinaigre et l'extrait de vanille, puis mélangez délicatement.
+  3) Étalez la meringue en formant un disque sur le cercle tracé. Creusez légèrement le centre pour former une cuvette. Enfournez pendant 1h30 à 2h jusqu'à ce que la meringue soit croustillante à l'extérieur et moelleuse à l'intérieur. Laissez refroidir dans le four éteint avec la porte entrouverte.
+  4) Montez la crème liquide en chantilly avec le sucre glace. Garnissez la meringue refroidie de chantilly, puis ajoutez les fraises coupées en morceaux. Décorez avec des feuilles de menthe avant de servir.",
+  meal: 'Dessert',
+  ingredient: "4 blancs d'œufs
+  250 g de sucre en poudre
+  1 cuillère à soupe de fécule de maïs
+  1 cuillère à café de vinaigre blanc
+  1 cuillère à café d'extrait de vanille
+  300 ml de crème liquide entière
+  50 g de sucre glace
+  500 g de fraises
+  Quelques feuilles de menthe (pour garnir)",
+  user: users[0]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/c_crop,ar_1:1/v1717934038/IMG_1118_kyw8xz.jpg")
+recipe.photo.attach(io: file, filename: "pavlova-aux-fraises.jpg", content_type: "photo/png")
+recipe.save
+
+
+recipe = Recipe.new(
+  title: 'La meilleure salade César 🤌🏼',
   instruction: "1) Lavez et séchez 1 laitue romaine.
 2) Coupez la laitue en morceaux.
 3) Préparez la vinaigrette César en mélangeant 100g de yaourt, 2 cuillères à soupe de jus de citron, 1 cuillère à café de moutarde, 1 gousse d'ail hachée, 50g de parmesan râpé, du sel et du poivre.
@@ -149,7 +261,7 @@ recipe = Recipe.new(
 • Poivre",
   user: users[1]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496668/ntebdfwrkmzweyksj0ie.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934007/00C3E30D-164B-45D6-980A-F1FCA477C032_spmjyu.jpg")
 recipe.photo.attach(io: file, filename: "caesar_salad.jpg", content_type: "photo/png")
 recipe.save
 
@@ -174,6 +286,54 @@ recipe = Recipe.new(
   user: users[2]
 )
 file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496667/h4qhuspdjaungxkzejpc.jpg")
+recipe.photo.attach(io: file, filename: "pancakes.jpg", content_type: "photo/png")
+recipe.save
+
+recipe = Recipe.new(
+  title: 'Légumes rôtis d`Otto Lenghi 🤤',
+  instruction: "1) Préchauffez le four à 200°C. Coupez les courgettes, l'aubergine et les poivrons en morceaux, l'oignon en quartiers et hachez l'ail.
+  2) Mélangez les légumes avec l'huile d'olive, le vinaigre balsamique, le sel, le poivre et le thym. Étalez-les sur une plaque de cuisson. Faites rôtir pendant 30-40 minutes, en remuant à mi-cuisson.
+  3) Ajoutez les tomates cerises et les pignons de pin sur la plaque 10 minutes avant la fin de la cuisson.
+  4) Sortez les légumes du four et laissez-les légèrement refroidir. Ajoutez la feta émiettée et le basilic frais avant de servir.",
+  meal: 'Plat',
+  ingredient: "2 courgettes
+  1 aubergine
+  2 poivrons (rouge et jaune)
+  1 oignon rouge
+  2 gousses d'ail
+  200 g de tomates cerises
+  50 g de feta émiettée
+  2 cuillères à soupe de pignons de pin
+  3 cuillères à soupe d'huile d'olive
+  1 cuillère à soupe de vinaigre balsamique
+  Sel et poivre
+  Quelques branches de thym frais
+  1 poignée de basilic frais",
+  user: users[2]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934053/IMG_4421_vpzv2l.jpg")
+recipe.photo.attach(io: file, filename: "legumes-rotis.jpg", content_type: "photo/png")
+recipe.save
+
+
+recipe = Recipe.new(
+  title: 'Banoffee allégé ',
+  instruction: "1) Mixez les biscuits digestifs en miettes et mélangez-les avec le beurre fondu. Tapissez le fond d'un moule à tarte avec ce mélange en pressant bien. Réfrigérez pendant 30 minutes.
+  2) Faites cuire la boîte de lait concentré sucré fermée dans une grande casserole d'eau frémissante pendant environ 2 heures pour obtenir du caramel (dulce de leche). Assurez-vous que la boîte soit toujours immergée dans l'eau. Laissez refroidir avant d'ouvrir.
+  3) Étalez le caramel refroidi sur la base de biscuits. Coupez les bananes en rondelles et disposez-les uniformément sur le caramel.
+  4) Montez la crème liquide en chantilly avec le sucre glace et l'extrait de vanille. Étalez la chantilly sur les bananes. Garnissez de chocolat râpé avant de servir.",
+  meal: 'Dessert',
+  ingredient: "1 paquet de biscuits digestifs (environ 200 g)
+  100 g de beurre fondu
+  1 boîte de lait concentré sucré (400 g)
+  3 bananes mûres
+  300 ml de crème liquide entière
+  50 g de sucre glace
+  1 cuillère à café d'extrait de vanille
+  Chocolat râpé (pour garnir)",
+  user: users[2]
+)
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717936996/IMG_5245_igjuvu.jpg")
 recipe.photo.attach(io: file, filename: "pancakes.jpg", content_type: "photo/png")
 recipe.save
 
