@@ -42,7 +42,7 @@
 }
 
 .card-recipages-arrow,
-.card-recipages-delete {
+.card- {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,4 +79,10 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.card-recipages-trash {
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
