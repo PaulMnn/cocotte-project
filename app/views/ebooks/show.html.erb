@@ -14,10 +14,10 @@
               <%= @ebook.ebook_title %>
             </h3>
           </div>
-          <div class="recipages-container">
             <% if @recipages.present? %>
               <% @recipages.each do |recipage| %>
-                <a href="<%= recipe_path(recipage.recipe) %>" class="card-recipages row mx-0 no-margin">
+          <div class="recipages-container row d-flex align-item-evenly">
+                <a href="<%= recipe_path(recipage.recipe) %>" class="card-recipages row mx-0 no-margin" >
                   <div class="card-recipages-image col-3">
                     <% if recipage.recipe.photo.attached? %>
                       <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
@@ -27,12 +27,17 @@
                     <h3><%= recipage.recipe.title %></h3>
                   </div>
                   <div class="card-recipages-arrow col-2">
-                    <i class="bi bi-arrow-right-square-fill"></i>
+                   <i class="fa-solid fa-magnifying-glass"></i>
                   </div>
-                  <div class="card-recipages-delete col-2">
-                    <i class="bi bi-trash-fill"></i>
+                  </a>
+
+                  <div class="card-recipages-trash col-2">
+                    <%= link_to  recipe_recipage_path(recipage), method: :delete, data: { confirm: 'Souhaitez-vous retirer cette recette?' } do %>
+                    <i class="fa-solid fa-xmark"></i>
+                    <% end %>
                   </div>
-                </a>
+
+                  </div>
               <% end %>
             <% else %>
               <p>No recipages available for this ebook.</p>
