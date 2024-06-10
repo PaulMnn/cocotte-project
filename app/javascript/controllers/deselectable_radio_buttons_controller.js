@@ -11,7 +11,6 @@ export default class extends Controller {
   toggleCheck(event) {
     const radio = event.currentTarget
     if (radio.checked) {
-      radio.checked =!radio.checked;
+      radio.checked = !radio.checked;
     }
-  }
 }
