@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # Nested routes for ebooks, recipes, and recipages
-  resources :recipes
-  resources :ebooks, except: [:destroy] do
+  # resources :recipes
+  resources :ebooks, except: [:delete, :update, :destroy] do
       resources :recipages, only: [:create]
     end
 
