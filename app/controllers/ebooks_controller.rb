@@ -3,6 +3,7 @@ class EbooksController < ApplicationController
     @ebook = Ebook.find(params[:id])
     @recipage = Recipage.new
     @recipages = @ebook.recipages
+    render layout: 'application2'
   end
 
   def index

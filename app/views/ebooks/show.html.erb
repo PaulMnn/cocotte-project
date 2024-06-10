@@ -1,49 +1,36 @@
-<body id="no-scroll-page">
-  <div class="container form-background-grey py-4">
-    <div class="row justify-content-center blue-grey-background-form">
-      <div class="col-12 col-md-8 col-lg-6">
-        <div class="form-frame p-4 mx-4">
-          <div class="text-center mb-3">
-            <%= link_to "Prévisualiser mon e-book", "https://www.canva.com/design/DAEQhusF-jI/doc1atMkZ9lQONcQDSmrOg/view", class: "btn btn-primary preview-button text-white" %>
-              </div>
-                <div class="card-title position-relative">
-                  <%= link_to ebooks_path, class: "arrow-link position-absolute" do %>
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                  <% end %>
-                    <h3 class="my-4 text-center">
-                      <%= @ebook.ebook_title %>
-                    </h3>
+<div class="container ebook-display">
 
-
-                      </div>
-                        <% if @recipages.present? %>
-                          <% @recipages.each do |recipage| %>
-                            <a href="<%= recipe_path(recipage.recipe) %>" class="s row mx-0 no-margin" >
-                              <div class="s-image col-3">
-                                <% if recipage.recipe.photo.attached? %>
-                                  <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
-                                <% end %>
-                                </div>
-                                  <div class="s-content col-5">
-                                    <h3><%= recipage.recipe.title %></h3>
-                                  </div>
-                                  <div class="s-arrow col-2">
-                                   <i class="fa-solid fa-arrow-left"></i>
-                                </div>
-                              </a>
-                            <div class="s-trash col-2">
-                          <%= link_to  recipe_recipage_path(recipage), method: :delete, data: { confirm: 'Souhaitez-vous retirer cette recette?' } do %>
-                        <i class="fa-solid fa-xmark"></i>
-                      <% end %>
-                    </div>
-                  <% end %>
-                <% else %>
-              <p>No recipages available for this ebook.</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="arrow-button col-4 position-absolute">
+      <%= link_to ebooks_path, class: "arrow-button" do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+    </div>
+    <div class="ebook-title col-8 text-center position-relative">
+      <p> <%= @ebook.ebook_title %> </p>
     </div>
   </div>
-</body>
 
+  <div class="ebook-counter">
+    <div class="info d-flex justify-content-center">
+          <div class="div mx-1"> <span><%= @ebook.dishes_count %> plats - </span></div>
+          <div class="div"><span><%= @ebook.starters_count %> entrées - </span></div>
+          <div class="div mx-1"><span><%= @ebook.desserts_count %> desserts</span></div>
+    </div>
+  </div>
+
+  <div class="div previsualisation">
+  </div>
+
+  <div class="modify-button d-flex justify-content-center" >
+    <%= link_to edit_ebook_path, class: "gear-button" do %>
+      <i class="fa-solid fa-gears"></i>
+    <% end %>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <a href="..." class="download-ebook btn col-10">Télécharger mon Ebook</a>
+  </div>
+
+</div>
