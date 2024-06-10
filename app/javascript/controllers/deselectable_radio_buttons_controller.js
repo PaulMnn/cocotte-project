@@ -4,17 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     this.element.querySelectorAll('input[type="radio"]').forEach(radio => {
-      radio.addEventListener('click', this.toggleCheck)
+      radio.addEventListener('click', this.toggleCheck);
     })
   }
 
   toggleCheck(event) {
     const radio = event.currentTarget
     if (radio.checked) {
-      radio.checked = false;
-    else {
-      radio.checked = true;
-      }
+      radio.checked = !radio.checked;
     }
-    }
-  }
+}
