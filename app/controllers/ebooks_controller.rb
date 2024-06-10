@@ -2,6 +2,7 @@ class EbooksController < ApplicationController
   def show
     @ebook = Ebook.find(params[:id])
     @recipages = @ebook.recipages
+    render layout: 'application2'
   end
 
   def index

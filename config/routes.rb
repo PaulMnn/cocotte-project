@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Nested routes for ebooks, recipes, and recipages
   resources :recipes
-  resources :ebooks, except: [:delete, :update] do
+  resources :ebooks, except: [:delete] do
       resources :recipages, only: [:create]
     end
 
