@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:destroy]
 
+
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -18,7 +19,12 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    if params[:recipe] && recipe_params[:link_url]
+      @recipe = Recipe.new(link_url: recipe_params[:link_url])
+      @recipe.set_content
+    else
+      @recipe = Recipe.new
+    end
   end
 
   def create
@@ -61,7 +67,6 @@ class RecipesController < ApplicationController
     end
   end
 
-
   private
 
   def set_recipe
@@ -69,6 +74,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredient, :instruction, :meal, :photo)
+    params.require(:recipe).permit(:title, :ingredient, :instruction, :meal, :photo, :link_url)
   end
 end
