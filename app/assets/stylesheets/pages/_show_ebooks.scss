@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+.ebook-display{
+  background-color: white !important;
+}
+
+.arrow-button {
+  font-size: 24px;
+  margin-left: -70px;
+  float: left;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.ebook-title {
+    text-align: justify;
+    font-family: 'Comic Neue';
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    align-items: center;
+}
+
+
+.ebook-counter{
+  font-family: Arial, sans-serif;
+  margin-top: -20px;
+  font-size: 12px;
+  color: #97B4CF;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom-style: solid;
+  border-color: darkgray;
+}
+
+.previsualisation{
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  background-color:#89AAC9;
+  border-radius: 5px;
+}
+
+
+.download-ebook{
+  background-color: #97B4CF;
+  border-radius: 10px;
+  color: white;
+  border: darkgray;
+  font-family: 'Comic Neue';
+  box-shadow: 0 5px 5px rgba(0,0,0,.4);
+  font-weight: bold;
+  font-size:  5vw;;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 120px;
+}
+
+.download-ebook:hover{
+  opacity: 0.9;
+  background-color: #97B4CF;
+  color: white;
+  transition: none;
+
+}
+
+.gear-button{
+  text-decoration: none;
+  color:darkgray;
+  font-size: 50px;
+  border: thin;
+  border-color: darkgray;
+  margin-bottom: 40px ;
+}
+
+.gear-button:hover{
+  opacity: 0.9;
+  color: gray;
+  transition: 0.3s;
+
+}
