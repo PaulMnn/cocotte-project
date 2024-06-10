@@ -1,6 +1,7 @@
 class EbooksController < ApplicationController
   def show
     @ebook = Ebook.find(params[:id])
+    @recipage = Recipage.new
     @recipages = @ebook.recipages
     render layout: 'application2'
   end
@@ -48,6 +49,6 @@ class EbooksController < ApplicationController
   private
 
   def ebook_params
-    params.require(:ebook).permit(:ebook_title, :theme, recipages_attributes: [:recipe_id])
+    params.require(:ebook).permit(:ebook_title, :theme, recipages_attributes: [:recipe_id, :id, :_destroy])
   end
 end

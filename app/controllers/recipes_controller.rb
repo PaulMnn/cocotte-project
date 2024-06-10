@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @selected_meal = @recipe.meal
   end
 
   def update
@@ -54,11 +55,6 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recette bien supprimée.' }
-      format.json { head :no_content }
-
-    end
   end
 
 
