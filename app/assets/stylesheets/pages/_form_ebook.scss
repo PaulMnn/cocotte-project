@@ -43,6 +43,11 @@
 .open-modal-black {
   background-color: black;
   width: 100%;
+  border-radius: 15px;
+  height: 36px;
+  border: none;
+  color:white;
+  margin-bottom: 20px;
  }
 
  .modal-footer {
@@ -65,3 +70,20 @@
  border: 1px solid;
  border-radius: 15px;
  }
+
+ .back-to-show-deco-none {
+  text-decoration: none;
+  color:white;
+ }
+
+.back-to-show-button-black{
+  background-color: black;
+  width: 100%;
+  border-radius: 15px;
+  height: 36px;
+  border: none;
+}
+
+.back-to-show-button-black:hover {
+  background-color: grey;
+}
