@@ -1,25 +1,92 @@
+<div class="loader" style="background-color: #89AAC9;">
 
+  <%= image_tag "logo-cocotte-loader.png", alt: "Logo Cocotte", class: "loader-logo" %>
 
-<a href="show.html" class="card row mt-5">
-    <div class= "card-image col-4">
-      <%= image_tag('background_cocotte.jpg', alt: 'background-image') %>
-    </div>
-    <div class="card-content col-4">
-        <h3>Burger viande vegan</h3>
-    </div>
-    <div class="card-arrow col-4">
-      <i class="bi bi-arrow-right-square-fill"></i>
-    </div>
-</a>
-
-
-<div class="container">
-  <div class="row height d-flex justify-content-center align-items-center">
-    <div class="col-md-6">
-      <div class="form">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control form-input" placeholder="Search anything...">
-      </div>
+  <div class="loader-content">
+    <i class="fas fa-utensils loader-icone mb-3"></i>
+    <p>CHARGEMENT ...</p>
+    <div class="loader-ellipses mt-3">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
+
 </div>
+
+
+<style>
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* placer le contenu en haut */
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+
+.loader-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.loader p {
+  color: white;
+}
+
+.loader-icone {
+  font-size: 4em;
+  margin-bottom: 20px;
+  color: #99E2D0;
+  animation: rotate 2000ms infinite;
+}
+
+.loader-ellipses {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.loader-ellipses span {
+  background-color: #A1E44D;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: loader-grow 2000ms infinite alternate;
+}
+
+.loader-ellipses span:nth-child(2) {
+  animation-delay: 400ms;
+}
+
+.loader-ellipses span:nth-child(3) {
+  animation-delay: 800ms;
+}
+
+.loader-logo {
+  max-width: 100%;
+  margin-top: 100px;
+}
+
+@keyframes loader-grow {
+  to {
+    transform: scale(1.2);
+    background-color: #89AAC9;
+    opacity: 100%;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden-on-home-page {
+  display: none;
+}
+</style>
