@@ -6,12 +6,13 @@ class GptService
   end
 
   def call
-    begin
-      result = @client.chat(parameters: self.query_params)
-      JSON.parse(result["choices"][0]["message"]["content"])
-    rescue => exception
-      {}
-    end
+    result = @client.chat(parameters: self.query_params)
+    JSON.parse(result["choices"][0]["message"]["content"])
+    # begin
+
+    # rescue => exception
+    #   {}
+    # end
   end
 
   private
