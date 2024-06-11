@@ -39,6 +39,8 @@
             <div class="card-image col-4">
               <% if recipe.photo.attached? %>
                 <%= image_tag recipe.photo, alt: recipe.title %>
+              <% else %>
+                <%= image_tag 'default_image4.jpg', class: "background-image" %>
               <% end %>
             </div>
             <div class="card-content col-4">

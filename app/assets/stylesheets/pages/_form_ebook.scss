@@ -13,12 +13,18 @@
   margin-top: 40px;
 }
 
+input::placeholder {
+  color: rgba(153, 153, 153, 0.5);
+}
+
 .ebook-form {
   background-image: url('background_cocotte.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
   margin-top: -60px;
+  background-attachment: fixed;
+  padding: 0
 }
 
 .black-create-ebook {
@@ -38,17 +44,6 @@
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-.open-modal-black {
-  background-color: black;
-  width: 100%;
-  border-radius: 15px;
-  height: 36px;
-  border: none;
-  color:white;
-  margin-bottom: 20px;
- }
 
  .modal-footer {
   padding-bottom: 100px;
@@ -76,14 +71,36 @@
   color:white;
  }
 
-.back-to-show-button-black{
-  background-color: black;
-  width: 100%;
+ .open-modal-black, .button-updating-black {
+  color:white;
+  margin-bottom: 20px;
+ }
+
+
+.open-modal-black, .button-updating-black {
+  background-color: #1B2228;
+  width: 70%;
   border-radius: 15px;
   height: 36px;
   border: none;
+  align-items: center;
 }
 
-.back-to-show-button-black:hover {
-  background-color: rgb(77, 74, 74);
+
+.open-modal-black:hover, .button-updating-black:hover {
+  background-color: #6E88A1;
+  transition: 0,2;
+}
+
+.control-label {
+  color: #89AAC9;
+  font-weight: bold;
+}
+
+.form-check-valid {
+  color: #89AAC9;
+}
+
+h3 {
+  font-family: 'Arial', sans-serif;
 }

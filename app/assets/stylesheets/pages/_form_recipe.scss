@@ -52,8 +52,14 @@ input::placeholder {
 }
 
 .custom-color-button {
-  background-color:black;
-  width: 70%;
+  background-color: #1B2228;
+  width: 50%;
+  border: none;
+}
+
+.custom-color-button:hover {
+  background-color: #6E88A1;
+  transition: 0,2;
 }
 
 .form-control {
@@ -62,8 +68,8 @@ input::placeholder {
 
 
 .control-label {
-  color: #89AAC9; /* Couleur bleu pâle */
-  font-weight: bold; /* Mettre le texte en gras */
+  color: #89AAC9;
+  font-weight: bold;
 }
 
 .form-check-valid {

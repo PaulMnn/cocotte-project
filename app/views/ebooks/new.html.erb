@@ -2,47 +2,45 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
+       <%= link_to ebooks_path do %>
+          <i class="fa-regular fa-circle-xmark text-black"></i>
+        <% end %>
         <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
-          <%= simple_form_for(@ebook) do |f| %>
-            <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: "form-field"} %>
-              <div class="form-container mb-5">
-                <div class="d-flex justify-content-center">
-                  <div class="theme-choice">
-                    <div class="label-full-width">
-                      <p class="text-center">Theme de l'Ebook</p>
-                        <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+        <%= simple_form_for(@ebook) do |f| %>
+          <div class="control-label">
+            <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "titre", input_html: { class: "form-field"} %>
+          </div>
+          <div class="form-container mb-5 d-flex justify-content-center theme-choice label-full-width control-label">
+            <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+          </div>
+          <button type="button" class="btn btn-primary rounded-5 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Choisis tes recettes</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-content modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-body">
+                <% Recipe.all.each do |recipe| %>
+                  <%= f.simple_fields_for :recipages do |r| %>
+                    <div class="card row mx-0">
+                      <div class="card-content col-4">
+                        <%= image_tag recipe.photo, alt: recipe.title %>
+                      </div>
+                      <div class="card-content col-8">
+                        <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe], :include_hidden => false %>
                       </div>
                     </div>
-                  </div>
-                </div>
-            <button type="button" class="btn btn-primary rounded-5 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Choisis tes recettes
-            </button>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                          <div class="modal-body">
-                              <% Recipe.all.each do |recipe| %>
-                                <%= f.simple_fields_for :recipages do |r| %>
-                                  <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe], :include_hidden => false %>
-                                <% end %>
-                              <% end %>
-
-                                </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
-                                    <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
-                                </div>
-                                <% end %>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
+                <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+        <% end %>
+  </div>
+</div>
