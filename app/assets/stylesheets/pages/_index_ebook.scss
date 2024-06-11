@@ -42,13 +42,12 @@
 .stats-big-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start; /* Alignement en haut */
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
-  height: 220px;
   margin: 0 auto;
   position: relative;
   transition: transform 0.2s;
@@ -68,42 +67,48 @@
 }
 .image-container-card {
   position: relative;
-  flex: 0 0 70%;
   width: 100%;
+  height: 150px; /* Définissez la hauteur fixe du conteneur */
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
 .image-container-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: top;
 }
-.edit-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.edit-button img {
-  width: 24px;
-  height: 24px;
-}
+
+
+// .edit-button {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+// }
+// .edit-button img {
+//   width: 24px;
+//   height: 24px;
+// }
 .text-container {
-  flex: 0 0 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10px; /* Ajustez cette valeur pour contrôler l'espacement */
 }
+
 .text-container h2 {
   margin: 0;
   font-size: 1.5em;
   text-align: center;
   font-family: 'Comic Neue', sans-serif;
 }
+
 .info {
   display: flex;
   justify-content: space-around;

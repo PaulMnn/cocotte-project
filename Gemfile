@@ -53,6 +53,7 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "pg_search"
 gem "ruby-openai"
+gem "rmagick"
 
 group :development, :test do
   gem "dotenv-rails"
