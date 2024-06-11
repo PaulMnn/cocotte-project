@@ -38,7 +38,6 @@
 .card-content {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .card-content h3 {
   margin: 0;
@@ -52,4 +51,18 @@
   justify-content: center;
   color: #151414;
   font-size: 22px;
+}
+
+.meal-button {
+  margin-right: 10px;
+  background-color: white;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.meal-button:hover {
+  background-color: #f9f9f9;
 }
