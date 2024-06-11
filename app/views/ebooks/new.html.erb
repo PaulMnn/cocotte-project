@@ -5,19 +5,22 @@
        <%= link_to ebooks_path do %>
           <i class="fa-regular fa-circle-xmark text-black"></i>
         <% end %>
-        <h3 class="my-4 text-center"><strong>Créer un Ebook </strong></h3>
+        <h3 class="my-4 text-center">Créez votre Ebook</h3>
         <%= simple_form_for(@ebook) do |f| %>
           <div class="control-label">
             <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "titre", input_html: { class: "form-field"} %>
           </div>
+
           <div class="form-container mb-5 d-flex justify-content-center theme-choice label-full-width control-label">
-            <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+            <%= f.input :theme, as: :radio_buttons, collection: [[image_tag("default_image4.jpg", size: "100x100"), "theme-1"], [image_tag("background_cocotte.jpg", size: "100x100"), "theme-2"]] %>
           </div>
-          <button type="button" class="btn btn-primary rounded-5 open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Choisis tes recettes</button>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary rounded-5 open-modal-black mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Choisissez vos recettes</button>
+          </div>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-content modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Sélectionnez des recettes</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               <div class="modal-body">
                 <% Recipe.all.each do |recipe| %>
@@ -26,7 +29,7 @@
                       <div class="card-content col-4">
                         <%= image_tag recipe.photo, alt: recipe.title %>
                       </div>
-                      <div class="card-content col-8">
+                      <div class="card-content col-8 div-no-background">
                         <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe], :include_hidden => false %>
                       </div>
                     </div>

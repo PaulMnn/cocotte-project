@@ -50,8 +50,7 @@ input::placeholder {
  }
 
  .form-check {
-  width: 95%;
-  background-color: rgb(233, 231, 231);
+  width: 100%;
   border-radius: 15px;
  }
 
@@ -103,4 +102,8 @@ input::placeholder {
 
 h3 {
   font-family: 'Arial', sans-serif;
+}
+
+.div-no-background {
+  background-color: white;
 }
