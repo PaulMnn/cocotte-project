@@ -1,9 +1,15 @@
         <%= simple_form_for(@recipe) do |f| %>
-          <div class="mb-2 d-flex justify content-end"><%= f.input :photo, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
-            <label for="icon-upload" class="icon-custom-button control-label">
-              <span class="form-check-valid">Charger une photo</span>
-              <i class="fa-solid fa-image"></i>
-            </label>
+          <div class="mb-2 d-flex justify content-end" data-controller="previews">
+            <%= f.input :photo, as: :file, direct_upload: true, label: false, input_html: { id: 'icon-upload', data: {previews_target: "input", action: "change->previews#preview" }} %>
+            <% if @recipe.photo.attached?  %>
+              <%= image_tag @recipe.photo, data: { previews_target: "preview" }, class: "preview-uploaded-image"  %>
+            <% else %>
+              <%= image_tag "", data: { previews_target: "preview" }, class: "preview-uploaded-image" %>
+            <% end %>
+            <%# <label for="icon-upload" class="icon-custom-button control-label"> %>
+              <%# <span class="form-check-valid">Charger une photo</span>
+              <i class="fa-solid fa-image"></i> %>
+            <%# </label> %>
           </div>
           <div class="mb-2 control-label"><%= f.input :title, as: :text, label: "Nom de la recette", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
           <div class="mb-2 control-label"><%= f.input :ingredient, label: "Ingrédients", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
