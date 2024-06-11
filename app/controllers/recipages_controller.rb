@@ -1,22 +1,28 @@
 class RecipagesController < ApplicationController
-  def delete
+  def destroy
     @recipage = Recipage.find(params[:id])
+    @ebook = @recipage.ebook
     @recipage.destroy
-    redirect_to ebook_path, status: :see_other
+    redirect_to ebook_path(@ebook), status: :see_other
   end
 
   def create
+    @recipe = Recipe.find(params[:recipe_id])
     @recipage = Recipage.new(recipage_params)
+    @ebook = @recipage.ebook
+    @recipage.recipe = @recipe
     if @recipage.save
-      redirect_to @recipage, notice: "Recette bien ajoutée"
+      redirect_to @ebook
     else
-      render :new
+      @recipages = @ebook.recipages
+      render layout: 'application2'
+      render ""
     end
   end
 
   private
 
   def recipage_params
-    params.require(:recipage).permit(:templating, :recipe, :recipe_id)
+    params.require(:recipage).permit(:templating, :recipe, :recipe_id, :ebook_id)
   end
 end
