@@ -58,11 +58,11 @@
   text-decoration: none;
   color: inherit;
 }
-.stats-big-card .edit-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
+// .stats-big-card .edit-button {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+// }
 .stats-big-card:hover {
   transform: scale(1.05);
 }
@@ -70,27 +70,29 @@
   position: relative;
   flex: 0 0 70%;
   width: 100%;
+  height: 150px;
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 .image-container-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: top;
 }
-.edit-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.edit-button img {
-  width: 24px;
-  height: 24px;
-}
+// .edit-button {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+// }
+// .edit-button img {
+//   width: 24px;
+//   height: 24px;
+// }
 .text-container {
   flex: 0 0 30%;
   display: flex;
