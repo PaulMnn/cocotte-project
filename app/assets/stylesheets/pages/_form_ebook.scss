@@ -1,6 +1,7 @@
 .form-background-grey {
   background-color: #f8f9fa;
   min-height: 100vh;
+  padding: 0;
 }
 
 .form-frame {
@@ -77,7 +78,7 @@ input::placeholder {
 
 
 .open-modal-black, .button-updating-black {
-  background-color: #1B2228;
+  background-color: #526679;
   width: 70%;
   border-radius: 15px;
   height: 36px;
@@ -85,9 +86,8 @@ input::placeholder {
   align-items: center;
 }
 
-
 .open-modal-black:hover, .button-updating-black:hover {
-  background-color: #6E88A1;
+  background-color: #B8CCDF;
   transition: 0,2;
 }
 
@@ -106,4 +106,9 @@ h3 {
 
 .div-no-background {
   background-color: white;
+}
+
+.preview-uploaded-image {
+  width: 230px;
+  height: 100px;
 }

@@ -8,12 +8,14 @@
         <h3 class="my-4 text-center">Créez votre Ebook</h3>
         <%= simple_form_for(@ebook) do |f| %>
           <div class="control-label">
-            <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "titre", input_html: { class: "form-field"} %>
+            <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "", input_html: { class: "form-field"} %>
           </div>
 
           <div class="form-container mb-5 d-flex justify-content-center theme-choice label-full-width control-label">
-            <%= f.input :theme, as: :radio_buttons, collection: [[image_tag("default_image4.jpg", size: "100x100"), "theme-1"], [image_tag("background_cocotte.jpg", size: "100x100"), "theme-2"]] %>
+            <%= f.input :theme, as: :radio_buttons, collection: [[image_tag("default_image4.jpg", size: "230x100"), "theme-1"], [image_tag("default_image4.jpg", size: "230x100"), "theme-2"]] %>
           </div>
+
+
           <div class="text-center">
             <button type="button" class="btn btn-primary rounded-5 open-modal-black mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Choisissez vos recettes</button>
