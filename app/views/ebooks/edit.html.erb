@@ -1,69 +1,50 @@
-<div class="container ebook-form form-background-grey">
+<div class="container ebook-form form-background-grey py-4">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
+        <%= link_to ebook_path do %>
+          <i class="fa-regular fa-circle-xmark text-black"></i>
+        <% end %>
         <h3 class="my-4 text-center"><strong>Modifier son Ebook </strong></h3>
-          <%= simple_form_for(@ebook) do |f| %>
-            <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: "form-field"} %>
-              <div class="form-container mb-5">
-                <div class="d-flex justify-content-center">
-                  <div class="theme-choice">
-                    <div class="label-full-width">
-                      <p class="text-center">Theme de l'Ebook</p>
-                        <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+        <%= simple_form_for(@ebook) do |f| %>
+          <div class="control-label">
+            <%= f.input :ebook_title, as: :text, label: "Titre", placeholder: "titre", input_html: { class: "form-field"} %>
+          </div>
+          
+          <div class="form-container mb-5 theme-choice label-full-width control-label">
+            <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
+          </div>
+          <button type="button" class="open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">Gérer ses recettes</button>
+          <%= f.submit "Mettre à jour", class:"button-updating-black" %>
+          <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-content modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-body" data-controller="deselectable-radio-buttons">
+                <% @ebook.recipages.each do |recipage| %>
+                  <%= f.simple_fields_for :recipages, recipage do |r| %>
+                    <div class="card row mx-0">
+                      <div class="card-content col-4">
+                        <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
+                      </div>
+                      <div class="card-content col-8">
+                        <%= r.input :recipe_id, label: "", as: :radio_buttons, :checked => 1, collection: [recipage.recipe],  :include_hidden => false, input_html: { data: { action: "click->deselectable-radio-buttons#toggleCheck" } } %>
                       </div>
                     </div>
-                  </div>
-                </div>
-            <button type="button" class="open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Gérer ses recettes
-          </button>
-        <button type="button" class= "back-to-show-button-black"><%= link_to "Retour", ebook_path, class:"back-to-show-deco-none" %></button>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                    <div class="modal-body" data-controller="deselectable-radio-buttons">
-                      <% @ebook.recipages.each do |recipage| %>
-                        <%= f.simple_fields_for :recipages, recipage do |r| %>
-                          <div class="card row mx-0">
-                            <div class="card-content col-4">
-                              <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
-                              </div>
-                                <div class="card-content col-4">
-                                <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipage.recipe],  :include_hidden => false, input_html: { data: { action: "click->deselectable-radio-buttons#toggleCheck" } } %>
-                                </div>
-                                  <div class="card-content col-4">
-                                    </div>
-                                      </div>
-                                    <% end %>
-                                  <% end %>
-                                <% Recipe.where.not(id: @ebook.recipes.map(&:id)).each do |recipe| %>
-                              <%= f.simple_fields_for :recipages, Recipage.new do |r| %>
-                                <div class="card row mx-0">
-                              <div class="card-content col-4">
-                              <%= image_tag recipe.photo, alt: recipe.title %>
-                            </div>
-                            <div class="card-content col-4">
-                            <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe],  :include_hidden => false, input_html: { data: { action: "click->deselectable-radio-buttons#toggleCheck" } } %>
-                          </div>
-                        <div class="card-content col-4">
-                        </div>
-                        </div>
-                        <% end %>
-                      <% end %>
-                    </div>
-                    <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
-                  <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
-                </div>
-              <% end %>
+                  <% end %>
+                <% end %>
+                <% Recipe.where.not(id: @ebook.recipes.map(&:id)).each do |recipe| %>
+                  <%= f.simple_fields_for :recipages, Recipage.new do |r| %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
+                <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

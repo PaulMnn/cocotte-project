@@ -1,18 +1,16 @@
-<%= simple_form_for(@recipe) do |f| %>
-            <div class="mb-2 d-flex justify content-end"><%= f.input :photo, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
-             <label for="icon-upload" class="icon-custom-button control-label">
-                <span class="form-check-valid">Charger une photo</span>
+        <%= simple_form_for(@recipe) do |f| %>
+          <div class="mb-2 d-flex justify content-end"><%= f.input :photo, as: :file, label: false, input_html: { style: 'display: none;', id: 'icon-upload' } %>
+            <label for="icon-upload" class="icon-custom-button control-label">
+              <span class="form-check-valid">Charger une photo</span>
               <i class="fa-solid fa-image"></i>
-                  </label>
-                    </div>
-                      <div class="mb-2 control-label"><%= f.input :title, as: :text, label: "Nom de la recette", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
-                      <div class="mb-2 control-label"><%= f.input :ingredient, label: "Ingrédients", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
-                    <div class="mb-2 control-label"><%= f.input :instruction, label: "Préparation", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
-                  <div class="mb-2 control-label" ><%= f.input :meal, label: false, collection: ["Choisir un type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: @selected_meal, input_html: { class: 'form-control control-label' } %></div>
-              <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 form-button custom-color-button" %></div>
-          <% end %>
+            </label>
           </div>
-        <div class="text-center mt-3 mb-4">
+          <div class="mb-2 control-label"><%= f.input :title, as: :text, label: "Nom de la recette", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
+          <div class="mb-2 control-label"><%= f.input :ingredient, label: "Ingrédients", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
+          <div class="mb-2 control-label"><%= f.input :instruction, label: "Préparation", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
+          <div class="mb-2 control-label" ><%= f.input :meal, label: false, collection: ["Choisir un type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: @selected_meal, input_html: { class: 'form-control control-label' } %></div>
+          <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 custom-color-button" %></div>
+        <% end %>
       </div>
     </div>
   </div>
