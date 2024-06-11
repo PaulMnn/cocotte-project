@@ -1,5 +1,5 @@
 <div class="container ebook-display">
-  <div class="row d-flex justify-content-center align-items-center">
+  <div class="row d-flex justify-content-center align-items-center pt-3">
     <div class="arrow-button col-4 position-absolute">
       <%= link_to ebooks_path, class: "arrow-button" do %>
         <i class="fa-solid fa-arrow-left"></i>
@@ -18,18 +18,19 @@
     </div>
   </div>
 
-<div class="div previsualisation">
-</div>
+  <div class="div previsualisation">
+  </div>
 
-<div class="modify-button d-flex justify-content-center" >
-  <%= link_to edit_ebook_path, class: "border-bottom gear-button" do %>
-    <i class="fa-solid fa-gears"></i>
-  <% end %>
-</div>
+  <div class="modify-button d-flex justify-content-center" >
+    <%= link_to edit_ebook_path, class: "gear-button rotating" do %>
+      <i class="fa-solid fa-gear"style="width: 100px; height: 100px; line-height: 100px; text-align: center;"></i>
+    <% end %>
+  </div>
 
 
-<div class="row justify-content-center">
-  <a href="..." class="download-ebook btn col-8">Télécharger mon Ebook</a>
-</div>
+  <div class="row justify-content-center">
+    <a href="..." class="download-ebook btn col-8">Télécharger mon Ebook</a>
+  </div>
+
 
 </div>
