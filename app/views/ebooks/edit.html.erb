@@ -1,8 +1,7 @@
 <div class="container ebook-form form-background-grey">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <div class="form-frame p-4 mx-4">
-        <h3 class="my-4 text-center"><strong>Modifier son Ebook </strong></h3>
+    <div class="col-12 col-md-8 col-lg-6 form-frame p-4 mx-4">
+      <h3 class="my-4 text-center"><strong>Modifier son Ebook </strong></h3>
           <%= simple_form_for(@ebook) do |f| %>
             <%= f.input :ebook_title, as: :text, label: false, placeholder: "titre", input_html: { class: "form-field"} %>
               <div class="form-container mb-5">
@@ -10,11 +9,11 @@
                   <div class="theme-choice">
                     <div class="label-full-width">
                       <p class="text-center">Theme de l'Ebook</p>
-                        <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
-                      </div>
+                      <%= f.input :theme, as: :radio_buttons, collection: [["Theme 1", "theme-1"], ["Theme 2", "theme-2"]] %>
                     </div>
                   </div>
                 </div>
+              </div>
             <button type="button" class="open-modal-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Gérer ses recettes
           </button>
@@ -64,7 +63,7 @@
             </div>
           </div>
         </div>
-      </div>
+
     </div>
   </div>
 </div>
