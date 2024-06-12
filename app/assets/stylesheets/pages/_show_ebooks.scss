@@ -31,32 +31,38 @@
   color: #97B4CF;
   font-weight: bold;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   border-bottom-style: solid;
   border-color: darkgray;
 }
 
 .previsualisation{
-  height: 300px;
-  margin-top: 50px;
+  height: 450px;
+  // margin-top: 50px;
   margin-bottom: 40px;
-  background-color:#89AAC9;
+  background-color:lightgray;
   border-radius: 20px;
 }
 
+// Bouton réglage
 
 .gear-button{
-  text-decoration: none;
-  color:darkgray;
-  font-size: 50px;;
-  margin-bottom: 40px ;
+    text-decoration: none;
+    color:darkgray;
+    font-size: 25px;
+    margin-bottom: -65px;
   }
 
   .gear-button:hover{
     opacity: 0.9;
     color: gray;
-  transition: 0.3s;
+    transition: 0.3s;
 
+  }
+  .gear-position{
+    display: flex;
+    justify-content: flex-end;
+    margin: -10px;
   }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
