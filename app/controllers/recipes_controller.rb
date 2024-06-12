@@ -22,8 +22,10 @@ class RecipesController < ApplicationController
     if params[:recipe] && recipe_params[:link_url]
       @recipe = Recipe.new(link_url: recipe_params[:link_url])
       @recipe.set_content
+    elsif params[:recipe]
+      @recipe = Recipe.new(recipe_params)
     else
-      @recipe = Recipe.new
+      @recipe = Recipe.new(title: params[:title], ingredient: params[:ingredient], instruction: params[:instruction])
     end
   end
 
@@ -36,6 +38,16 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def transcribe_image
+    transcribe_url = Cloudinary::Uploader.upload(params[:recipe][:photo].path)
+    result = OpenaiService.new(url: transcribe_url["url"]).call
+    redirect_to new_recipe_path(recipe: {
+      title: result["title"],
+      ingredient: result["ingredients"],
+      instruction: result["preparation_steps"]
+    })
   end
 
   def edit

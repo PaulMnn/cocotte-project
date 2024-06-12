@@ -8,13 +8,17 @@ class OpenaiService
   def call
     result = @client.chat(parameters: self.query_params)
     JSON.parse(result["choices"][0]["message"]["content"])
+    # begin
+    # rescue => exception
+    #   {}
+    # end
   end
 
   private
 
   def query_params
     {
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         {
           role: "user",

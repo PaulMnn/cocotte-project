@@ -16,7 +16,7 @@
           <div class="mb-2 control-label"><%= f.input :ingredient, label: "Ingrédients", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
           <div class="mb-2 control-label"><%= f.input :instruction, label: "Préparation", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
           <div class="mb-2 control-label" ><%= f.input :meal, label: false, collection: ["Choisir un type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: @selected_meal, input_html: { class: 'form-control control-label' } %></div>
-          <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 custom-color-button" %></div>
+          <div class="mb-2 text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 custom-color-button" %></div>
         <% end %>
       </div>
     </div>
