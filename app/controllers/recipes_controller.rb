@@ -70,9 +70,9 @@ class RecipesController < ApplicationController
     end
   end
 
-
   def destroy
     @recipe.destroy
+    redirect_to recipes_path, status: :see_other
   end
 
   private

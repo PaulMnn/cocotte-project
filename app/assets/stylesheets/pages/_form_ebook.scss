@@ -69,8 +69,17 @@ input::placeholder {
   border: none;
   align-items: center;
 }
+.button-valid-list-blue {
+  color:white;
+  background-color: #526679;
+  width: 150px;
+  border-radius: 15px;
+  height: 36px;
+  border: none;
+  align-items: center;
+}
 
-.open-modal-black:hover, .button-updating-black:hover {
+.open-modal-black:hover, .button-updating-black:hover, .button-valid-list-blue:hover {
   background-color: #B8CCDF;
   transition: 0,2;
 }
