@@ -1,0 +1,32 @@
+ <%= simple_form_for(@ebook) do |f| %>
+          <div class="control-label">
+            <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "", input_html: { class: "form-field"} %>
+          </div>
+
+          <div class="form-container mb-5 d-flex justify-content-center theme-choice label-full-width control-label">
+            <%= f.input :theme, as: :radio_buttons, input_html: { class: "image-radio-clickable"}, collection: [[image_tag("default_image4.jpg", size: "230x100"), "theme-1"], [image_tag("default_image4.jpg", size: "230x100"), "theme-2"]] %>
+          </div>
+
+
+          <div class="text-center">
+            <button type="button" class="btn btn-primary rounded-5 open-modal-black mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Choisissez vos recettes</button>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-content modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sélectionnez des recettes</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-body">
+              <%= f.input :recipe_ids, label:"", as: :check_boxes,  collection: Recipe.all %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
+                <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+        <% end %>
+  </div>
+</div>

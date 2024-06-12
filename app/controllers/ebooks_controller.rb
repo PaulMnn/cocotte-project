@@ -16,7 +16,6 @@ class EbooksController < ApplicationController
   def new
     # @recipes = Recipe.all
     @ebook = Ebook.new
-    @ebook.recipages.build
   end
 
   def create
@@ -49,6 +48,6 @@ class EbooksController < ApplicationController
   private
 
   def ebook_params
-    params.require(:ebook).permit(:ebook_title, :theme, recipages_attributes: [:recipe_id, :id, :_destroy])
+    params.require(:ebook).permit(:ebook_title, :theme, recipe_ids: [])
   end
 end

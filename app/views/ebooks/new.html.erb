@@ -6,48 +6,4 @@
           <i class="fa-regular fa-circle-xmark text-black"></i>
         <% end %>
         <h3 class="my-4 text-center">Créez votre Ebook</h3>
-        <%= simple_form_for(@ebook) do |f| %>
-          <div class="control-label">
-            <%= f.input :ebook_title, as: :text, label: "titre", placeholder: "", input_html: { class: "form-field"} %>
-          </div>
-
-          <div class="form-container mb-5 d-flex justify-content-center theme-choice label-full-width control-label">
-            <%= f.input :theme, as: :radio_buttons, collection: [[image_tag("default_image4.jpg", size: "230x100"), "theme-1"], [image_tag("default_image4.jpg", size: "230x100"), "theme-2"]] %>
-          </div>
-
-
-          <div class="text-center">
-            <button type="button" class="btn btn-primary rounded-5 open-modal-black mb-4 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Choisissez vos recettes</button>
-          </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-content modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Sélectionnez des recettes</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              <div class="modal-body">
-                <% Recipe.all.each do |recipe| %>
-                  <%= f.simple_fields_for :recipages do |r| %>
-                    <div class="card row mx-0">
-                      <div class="card-content col-4">
-                       <% if recipe.photo.attached? %>
-                        <%= image_tag recipe.photo, alt: recipe.title %>
-                       <% end %>
-                      </div>
-                      <div class="card-content col-8 div-no-background">
-                        <%= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe], :include_hidden => false %>
-                      </div>
-                    </div>
-                  <% end %>
-                <% end %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
-                <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-        <% end %>
-  </div>
-</div>
+       <%= render "form", ebook: @ebook %>
