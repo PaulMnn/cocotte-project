@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :recipages, only: [:show, :destroy, :create]
   end
+
+  post "/transcribe_image" => "recipes#transcribe_image", :as => :transcribe_image
+
 end
