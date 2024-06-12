@@ -2,7 +2,6 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :ebooks, through: :recipages
   has_one_attached :photo
-
   validates :title, presence: true
   validates :meal, presence: true
 
@@ -29,5 +28,9 @@ class Recipe < ApplicationRecord
      self.title = new_content["titre"]
      self.ingredient = new_content["ingrédients"].join("\n")
      self.instruction = new_content["étapes de préparation"].join("\n")
+  end
+
+  def set_content_by_image(picture_url)
+    GptService.new(url: picture_url).call
   end
 end

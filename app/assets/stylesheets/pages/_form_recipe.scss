@@ -1,8 +1,13 @@
+#icon.upload {
+  display: none;
+}
+
 .form-background-grey {
   background-color: #f8f9fa;
   min-height: 100vh;
   padding: 0;
 }
+
 
 .form-frame {
   background: white;
@@ -19,11 +24,11 @@
   padding-right: 20px;
   margin-left:20px;
   margin-right: 20px;
-
 }
 
-.form-frame h3 {
+.form-frame.h3 {
   font-family: 'Arial', sans-serif;
+  margin: none;
 }
 
 .blue-grey-background-form {
