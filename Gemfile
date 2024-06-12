@@ -53,7 +53,6 @@ gem "sassc-rails"
 gem "cloudinary"
 gem "pg_search"
 gem "ruby-openai"
-gem "rmagick"
 
 group :development, :test do
   gem "dotenv-rails"
@@ -79,3 +78,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "rmagick", "~> 6.0"
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
