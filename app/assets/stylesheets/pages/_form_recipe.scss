@@ -1,7 +1,9 @@
 .form-background-grey {
-  background-color: #f8f9fa;
-  min-height: 100vh;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 0;
 }
+
 
 .form-frame {
   background: white;
@@ -11,6 +13,13 @@
   margin: auto;
   min-height: 80vh;
   margin-top: 40px;
+  overflow: scroll;
+  padding-bottom: 160px;
+  padding-top: 20px;
+  padding-left:20px;
+  padding-right: 20px;
+  margin-left:20px;
+  margin-right: 20px;
 }
 
 .form-frame h3 {
