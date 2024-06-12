@@ -19,43 +19,13 @@
     </div>
   </div>
 
-<div class="div previsualisation">
-  <!-- Livre virtuel avec pages -->
-
-<!-- app/views/posts/show.html.erb -->
-<div class="swiper-container" data-controller="swipper">
-  <div class="swiper-wrapper">
-  <%# Each %>
-    <div class="swiper-slide">
-      <h3>Slide 1</h3>
-      <p>This is the first slide.</p>
+  <div class="gear-position">
+    <div class="modify-button d-flex justify-content-flex-end" >
+      <%= link_to edit_ebook_path, class: "gear-button rotating" do %>
+        <i class="fa-solid fa-gear"style="width: 65px; height: 100px; line-height: 100px; text-align: center;"></i>
+      <% end %>
     </div>
-    <div class="swiper-slide">
-      <h3>Slide 2</h3>
-      <p>This is the second slide.</p>
-    </div>
-    <div class="swiper-slide">
-      <h3>Slide 3</h3>
-      <p>This is the third slide.</p>
-    </div>
-  </div>
- <!-- Pagination -->
-  <div class="swiper-pagination"></div>
- <!-- Navigation -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 </div>
-
-
-</div>
-
-
-  <div class="modify-button d-flex justify-content-center" >
-    <%= link_to edit_ebook_path, class: "gear-button rotating" do %>
-      <i class="fa-solid fa-gear"style="width: 100px; height: 100px; line-height: 100px; text-align: center;"></i>
-    <% end %>
-  </div>
-
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
@@ -66,17 +36,51 @@
     </defs>
   </svg>
 
+
+  <div class="div previsualisation">
+    <!-- Livre virtuel avec pages -->
+
+  <!-- app/views/posts/show.html.erb -->
+  <div class="swiper-container" data-controller="swipper">
+    <div class="swiper-wrapper">
+    <%# Each %>
+      <div class="swiper-slide">
+        <h3>Slide 1</h3>
+        <p>This is the first slide.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3>Slide 2</h3>
+        <p>This is the second slide.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3>Slide 3</h3>
+        <p>This is the third slide.</p>
+      </div>
+    </div>
+  <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  <!-- Navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+
+  </div>
+
+
+
+
 <div id="downloadModal" class="modal fade" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body text-center">
-        <p>Votre Ebook a bien été téléchargé, retrouvez-le dans vos téléchargements !</p>
+        <p>Votre Ebook a bien été généré, retrouvez-le dans vos téléchargements !</p>
       </div>
     </div>
   </div>
 </div>
 
-  <div class="row justify-content-center">
+  <div class="row justify-content-center align-items-flex-end;">
     <%= link_to "#", class: "download-ebook btn col-8", data: { toggle: "modal", target: "#downloadModal" } do %>
       Téléchargez votre Ebook
     <% end %>
