@@ -16,13 +16,19 @@
             <div class="modal-dialog modal-content modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Sélectionnez des recettes</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              <div class="modal-body">
-              <%= f.input :recipe_ids, label:"", as: :check_boxes,  collection: Recipe.all %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
-                <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
-              </div>
+                <div class="modal-body">
+                  <%= f.input :recipe_ids,
+                    label: "Sélectionner les recettes à ajouter",
+                    as: :check_boxes,
+                    collection: Recipe.all.map{|recipe| [raw(render partial: "recipages", locals: {recipe: recipe }), recipe.id]},
+                    input_html: { data: {form_target: "input" }, class: "sr-only"},
+                    item_label_class: "form-check-label w-100",
+                    wrapper_class: "row mx-0",
+                    item_wrapper_class: "col-12"%>
+                </div>
+                <div class="modal-footer">
+                  <%= button_tag "Valider", type: "submit", class: "button-valid-list-blue rounded-5" %>
+                </div>
             </div>
           </div>
       </div>
@@ -30,3 +36,8 @@
         <% end %>
   </div>
 </div>
+
+<%# ancienne list de checkbox %>
+<%# <div class="modal-body">
+<%= f.input :recipe_ids, label:"", as: :check_boxes,  collection: Recipe.all %>
+<%# </div> %>
