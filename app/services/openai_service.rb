@@ -1,4 +1,4 @@
-class GptService
+class OpenaiService
 
   def initialize(attrs)
     @client = OpenAI::Client.new
@@ -19,7 +19,7 @@ class GptService
 
   def query_params
     {
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         {
           role: "user",
