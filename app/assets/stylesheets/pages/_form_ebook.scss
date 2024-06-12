@@ -4,16 +4,6 @@
   padding: 0;
 }
 
-.form-frame {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-height: 700px;
-  margin: auto;
-  min-height: 80vh;
-  margin-top: 40px;
-}
-
 input::placeholder {
   color: rgba(153, 153, 153, 0.5);
 }
@@ -111,6 +101,7 @@ h3 {
 .preview-uploaded-image {
   width: 230px;
   height: 100px;
+  object-fit: cover;
 }
 
  .image-radio-clickable {
