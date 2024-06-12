@@ -112,3 +112,20 @@ h3 {
   width: 230px;
   height: 100px;
 }
+
+ .image-radio-clickable {
+   position:absolute;
+   transform: scale(0);
+ }
+
+ .image-radio-clickable + label {
+   cursor: pointer;
+ }
+
+ .image-radio-clickable:checked + label {
+  border: 8px solid #A1BBD4;
+ }
+
+ .custom-valid {
+  color:#A1BBD4;
+ }

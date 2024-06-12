@@ -2,63 +2,19 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <div class="form-frame p-4 mx-4">
-        <%= link_to ebook_path do %>
+       <%= link_to ebooks_path do %>
           <i class="fa-regular fa-circle-xmark text-black"></i>
         <% end %>
         <h3 class="my-4 text-center">Modifiez votre Ebook</h3>
-        <%= simple_form_for(@ebook) do |f| %>
-          <div class="control-label">
-            <%= f.input :ebook_title, as: :text, label: "Titre", placeholder: "titre", input_html: { class: "form-field"} %>
-          </div>
-          <div class="form-container mb-5 theme-choice label-full-width control-label">
-            <%= f.input :theme, as: :radio_buttons, collection: [[image_tag("default_image4.jpg", size: "230x100"), "theme-1"], [image_tag("default_image4.jpg", size: "230x100"), "theme-2"]] %>
-          </div>
-          <div class="text-center">
-            <button type="button" class="open-modal-black mb-4 mt-4 custom-color-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Gérez vos recettes</button>
-            <%= f.submit "Mettre à jour", class:"button-updating-black" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-content modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Sélectionner de(s) recette(s)</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    <div class="modal-body" data-controller="deselectable-radio-buttons">
-      <% @ebook.recipages.each do |recipage| %>
-        <%= link_to recipe_recipage_path(recipage.recipe, recipage), data: { turbo_method: :delete} do %>
-          <div class="card row mx-0">
-            <div class="card-content col-4">
-              <%= image_tag recipage.recipe.photo, alt: recipage.recipe.title %>
-            </div>
-            <div class="card-content col-8 justify-content-center">
-            <%= recipage.recipe.title%>
-              <%#= r.input :recipe_id, label: "", as: :radio_buttons, collection: [recipage.recipe],  :include_hidden => false, input_html: { data: { action: "click->deselectable-radio-buttons#create" } } %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <% Recipe.where.not(id: @ebook.recipes.map(&:id)).each do |recipe| %>
-        <%= simple_form_for [recipe, Recipage.new(ebook: @ebook)] do |f| %>
-          <div class="card row mx-0">
-            <div class="card-content col-4">
-              <%= image_tag recipe.photo, alt: recipe.title %>
-            </div>
-             <div class="card-content col-8">
-              <%= recipe.title %>
-            </div>
-            <%= f.input :recipe_id, label: "", as: :radio_buttons, collection: [recipe] %>
-            <%= f.input :ebook_id, as: :hidden, included_hidden: true %>
-            <%= f.button :submit, "" %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary rounded-5" data-bs-dismiss="modal">Retour</button>
-      <%= button_tag "Valider", type: "submit", class: "btn btn-primary rounded-5" %>
-    </div>
-  </div>
-</div>
+        <%= render "form", ebook: @ebook %>
+
+<%# To DO %>
+<%#= f.input :model,
+label: "1. Selectionner l'évènement à renouveler",
+as: :radio_buttons,
+collection: @models.map{|event| [raw(render partial: 'admin/events/model', locals: {event: event}), event.id]},
+input_html: {data: {form_target: 'input'}, class: 'sr-only'},
+item_label_class: "form-check-label w-100",
+wrapper_class:"row mx-0",
+item_wrapper_class: "col-12 col-md-6 col-lg-4"
+%>
