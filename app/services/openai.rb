@@ -1,4 +1,4 @@
-class GptService
+class OpenaiService
 
   def initialize(attrs)
     @client = OpenAI::Client.new
@@ -8,11 +8,6 @@ class GptService
   def call
     result = @client.chat(parameters: self.query_params)
     JSON.parse(result["choices"][0]["message"]["content"])
-    # begin
-
-    # rescue => exception
-    #   {}
-    # end
   end
 
   private
