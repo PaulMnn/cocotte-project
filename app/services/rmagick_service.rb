@@ -16,10 +16,8 @@ class RmagickService
 
     template = @recipage.ebook.theme == "background-ilu.jpg" ? "template-ilu.jpg" : "template-ro.jpg"
 
-    # template = '/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/template.jpg'
-
     # Lisez les images
-    img = Image.read("/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/#{template}").first
+    img = Image.read("app/assets/images/#{template}").first
 
     draw = Draw.new
     draw.font = 'Helvetica'
@@ -41,7 +39,7 @@ class RmagickService
     draw.annotate(img, 1298, 493, 56, 537, ingredients)
 
     # Enregistrez l'image résultante
-    output_path = '/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/output.jpg'
+    output_path = 'app/assets/images/output.jpg'
     img.write(output_path)
 
     # file = "output.jpg"
