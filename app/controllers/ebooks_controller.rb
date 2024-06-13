@@ -25,7 +25,7 @@ class EbooksController < ApplicationController
     @ebook.associate_theme
     @ebook.user = current_user
     if @ebook.save
-      redirect_to ebook_path(@ebook)
+      redirect_to ebooks_path
     else
       render :new, status: :unprocessable_entity
     end
