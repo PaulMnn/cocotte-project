@@ -36,19 +36,24 @@
   border-color: darkgray;
 }
 
-.previsualisation{
-  height: 464px;
-  // margin-top: 50px;
-  margin-bottom: 40px;
-  border-radius: 20px;
 
-  img{
-    height: 60vh;
-    object-fit: cover;
-  }
+.previsualisation {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  background-color: #89AAC9;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-// Bouton réglage
+.previsualisation img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 
 .gear-button{
     text-decoration: none;
