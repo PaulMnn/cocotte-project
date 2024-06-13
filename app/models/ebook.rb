@@ -1,11 +1,13 @@
 class Ebook < ApplicationRecord
   belongs_to :user
-  has_many :recipages
+  has_many :recipages, dependent: :destroy
   has_many :recipes, through: :recipages
   validates :theme, presence: true
   validates :ebook_title, presence: true
   has_one_attached :photo
   accepts_nested_attributes_for :recipages
+
+  before_create :associate_theme
 
   def dishes_count
     recipes.where(meal: 'Plat').count
@@ -20,6 +22,6 @@ class Ebook < ApplicationRecord
   end
 
   def associate_theme
-    self.theme == "theme-1" ? self.theme = "/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/template-ilu.jpg" : self.theme = "/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/template-ro.jpg"
+    self.theme = (self.theme == "theme-1") ? "background-ilu.jpg" : "background-bleu-fonce.jpg"
   end
 end

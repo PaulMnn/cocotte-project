@@ -1,6 +1,4 @@
 class EbooksController < ApplicationController
-  require_dependency 'rmagick_service'
-
   def show
     @ebook = Ebook.find(params[:id])
     @recipage = Recipage.new
@@ -22,7 +20,6 @@ class EbooksController < ApplicationController
 
   def create
     @ebook = Ebook.new(ebook_params)
-    @ebook.associate_theme
     @ebook.user = current_user
     if @ebook.save
       redirect_to ebooks_path

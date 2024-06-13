@@ -14,7 +14,7 @@ class RecipagesController < ApplicationController
     @ebook = @recipage.ebook
     @recipage.recipe = @recipe
     if @recipage.save
-      # RMagickService.new(@recipage).create_image_with_text
+      RmagickService.new(@recipage).create_image_with_text
       redirect_to @ebook
     else
       @recipages = @ebook.recipages
