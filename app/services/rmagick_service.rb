@@ -34,7 +34,7 @@ class RmagickService
     draw_text_lines(draw, img, wrapped_instructions, 56, 1279, 30)
 
     # ingrédients
-    draw.pointsize = 30
+    draw.pointsize = 50
     draw.gravity = WestGravity
     draw.annotate(img, 1298, 493, 56, 537, ingredients)
 
