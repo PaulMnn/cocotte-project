@@ -29,12 +29,12 @@ class RmagickService
     draw.annotate(img, 1298, 231, 56, 56, titre)
 
      # instructions
-    draw.pointsize = 30
+    draw.pointsize = 50
     draw.gravity = NorthWestGravity
     draw.annotate(img, 828, 913, 56, 1279, instructions)
 
     # ingrédients
-    draw.pointsize = 30
+    draw.pointsize = 50
     draw.gravity = WestGravity
     draw.annotate(img, 1298, 493, 56, 537, ingredients)
 
