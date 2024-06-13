@@ -2,7 +2,7 @@
 require 'rmagick'
 include Magick
 
-class RMagickService
+class RmagickService
   def initialize(recipage)
     @recipage = recipage
   end
