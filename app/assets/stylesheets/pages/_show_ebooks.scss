@@ -31,10 +31,11 @@
   color: #97B4CF;
   font-weight: bold;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   border-bottom-style: solid;
   border-color: darkgray;
 }
+
 
 .previsualisation {
   height: 300px;
@@ -54,19 +55,24 @@
 }
 
 
-
 .gear-button{
-  text-decoration: none;
-  color:darkgray;
-  font-size: 50px;;
-  margin-bottom: 40px ;
+    text-decoration: none;
+    color:darkgray;
+    font-size: 25px;
+    margin-bottom: -65px;
+    z-index: 9999;
   }
 
   .gear-button:hover{
     opacity: 0.9;
     color: gray;
-  transition: 0.3s;
+    transition: 0.3s;
 
+  }
+  .gear-position{
+    display: flex;
+    justify-content: flex-end;
+    margin: -10px;
   }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
@@ -204,4 +210,37 @@ $transition-time: 1s;
   100% {
     transform: translateX(0px);
   }
+}
+
+// Carousel
+
+// .carousel-control-prev{
+//   height: 430px;
+//   left: 5px;
+// }
+
+
+// .carousel-control-next{
+//   height: 430px;
+//   left: 5px;
+// }
+
+
+.carousel-control-prev, .carousel-control-next {
+  height: 430px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* ajustez la largeur selon vos besoins */
+
+.carousel-control-prev {
+  left: 0; /* positionne la flèche de gauche à l'extrémité gauche */
+}
+
+.carousel-control-next {
+  right: 0; /* positionne la flèche de droite à l'extrémité droite */
+}
+
+.div.previsualisation {
+  position: relative; /* assure que la div contient les flèches */
+}
 }

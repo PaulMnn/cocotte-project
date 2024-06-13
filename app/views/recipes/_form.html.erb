@@ -1,12 +1,13 @@
         <%= simple_form_for(@recipe) do |f| %>
-          <div class="mb-2 d-flex justify content-end" data-controller="previews">
+          <div class="mb-2" data-controller="previews">
             <%= f.input :photo, as: :file, direct_upload: true, label: false, input_html: { id: 'icon-upload', data: {previews_target: "input", action: "change->previews#preview" }} %>
+            <br>
             <% if @recipe.photo.attached?  %>
               <%= image_tag @recipe.photo, data: { previews_target: "preview" }, class: "preview-uploaded-image"  %>
             <% else %>
-              <%= image_tag "", data: { previews_target: "preview" }, class: "preview-uploaded-image" %>
+              <%= image_tag "place-holder.jpg", data: { previews_target: "preview" }, class: "preview-uploaded-image" %>
             <% end %>
-            <%# <label for="icon-upload" class="icon-custom-button control-label"> %>
+            <%# <label for="icon-upload" class="icon-custom-button control<-label"> %>
               <%# <span class="form-check-valid">Charger une photo</span>
               <i class="fa-solid fa-image"></i> %>
             <%# </label> %>
@@ -15,7 +16,7 @@
           <div class="mb-2 control-label"><%= f.input :ingredient, label: "Ingrédients", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
           <div class="mb-2 control-label"><%= f.input :instruction, label: "Préparation", placeholder: "A renseigner", input_html: { class: 'form-field'} %></div>
           <div class="mb-2 control-label" ><%= f.input :meal, label: false, collection: ["Choisir un type de plat", "Entrée", "Plat", "Dessert", "Boisson", "Snack", "Apéritifs", "Brunch"], selected: @selected_meal, input_html: { class: 'form-control control-label' } %></div>
-          <div class="text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 custom-color-button" %></div>
+          <div class="mb-2 text-center"><%= f.button :submit, "Enregistrer", class: "btn btn-primary rounded-5 mb-4 mt-4 custom-color-button" %></div>
         <% end %>
       </div>
     </div>

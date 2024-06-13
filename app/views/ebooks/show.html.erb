@@ -1,3 +1,4 @@
+
 <div class="container ebook-display">
   <div class="row d-flex justify-content-center align-items-center pt-3">
     <div class="arrow-button col-4 position-absolute">
@@ -18,16 +19,13 @@
     </div>
   </div>
 
-  <div class="div previsualisation">
-    <%= image_tag 'output.jpg' %>
-  </div>
-
-  <div class="modify-button d-flex justify-content-center" >
-    <%= link_to edit_ebook_path, class: "gear-button rotating" do %>
-      <i class="fa-solid fa-gear"style="width: 100px; height: 100px; line-height: 100px; text-align: center;"></i>
-    <% end %>
-  </div>
-
+  <div class="gear-position">
+    <div class="modify-button d-flex justify-content-flex-end" >
+      <%= link_to edit_ebook_path, class: "gear-button rotating" do %>
+        <i class="fa-solid fa-gear"style="width: 65px; height: 100px; line-height: 100px; text-align: center;"></i>
+      <% end %>
+    </div>
+</div>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
@@ -39,8 +37,50 @@
   </svg>
 
 
-  <div class="row justify-content-center">
-    <a href="..." class="download-ebook btn col-8">Téléchargez votre Ebook</a>
+  <div class="div previsualisation">
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
+      <div class="carousel-inner">
+      <% @ebook.recipes.each do |recipe| %>
+        <div class="carousel-item active">
+         <%= image_tag 'Page0-ebook1.jpg', class: "d-block w-100"%>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%=recipe.title%></h5>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+<%#
+    <!-- Livre virtuel avec pages -->
+    <%= image_tag 'Page0-ebook1.jpg', class: "background-image" %>
+  </div>
+
+
+
+
+<div id="downloadModal" class="modal fade" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <p>Votre Ebook a bien été généré, retrouvez-le dans vos téléchargements !</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row justify-content-center align-items-flex-end;">
+    <%= link_to "#", class: "download-ebook btn col-8", data: { toggle: "modal", target: "#downloadModal" } do %>
+      Téléchargez votre Ebook
+    <% end %>
   </div>
 
 

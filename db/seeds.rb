@@ -45,7 +45,7 @@ recipe = Recipe.new(
   - Une pincée de muscade",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934067/IMG_9103_axjksb.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934067/IMG_9103_axjksb.jpg")
 recipe.photo.attach(io: file, filename: "lasagnes-saumon-epinards.jpg", content_type: "photo/png")
 recipe.save
 
@@ -72,7 +72,7 @@ recipe = Recipe.new(
   1 sachet de nappage pour tarte (facultatif)",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934066/IMG_4829_eix6wp.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934066/IMG_4829_eix6wp.jpg")
 recipe.photo.attach(io: file, filename: "tarte-aux-fraises.jpg", content_type: "photo/png")
 recipe.save
 
@@ -99,7 +99,7 @@ recipe = Recipe.new(
   Feuilles de basilic frais pour la garniture (facultatif)",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934043/IMG_2548_pexcnt.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934043/IMG_2548_pexcnt.jpg")
 recipe.photo.attach(io: file, filename: "pizza-sans-feculent.jpg", content_type: "photo/png")
 recipe.save
 
@@ -123,7 +123,7 @@ recipe = Recipe.new(
   Sel et poivre au goût",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934059/IMG_4628_nbtkxm.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934059/IMG_4628_nbtkxm.jpg")
 recipe.photo.attach(io: file, filename: "welsh.jpg", content_type: "photo/png")
 recipe.save
 
@@ -149,7 +149,7 @@ recipe = Recipe.new(
 • 50g de parmesan râpé",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496669/eekladnqir10npbnpvua.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496669/eekladnqir10npbnpvua.jpg")
 recipe.photo.attach(io: file, filename: "spaghetti.jpg", content_type: "photo/png")
 recipe.save
 
@@ -171,7 +171,7 @@ recipe = Recipe.new(
   Quelques feuilles de roquette (pour garnir)",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934052/IMG_4231_u05bf6.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934052/IMG_4231_u05bf6.jpg")
 recipe.photo.attach(io: file, filename: "tarte-fine-carottes-burrata.jpg", content_type: "photo/png")
 recipe.save
 
@@ -192,7 +192,7 @@ recipe = Recipe.new(
   Sel et poivre au goût",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934031/B3182B6C-1F0B-4924-9181-A3280B18397A_urnraj.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934031/B3182B6C-1F0B-4924-9181-A3280B18397A_urnraj.jpg")
 recipe.photo.attach(io: file, filename: "tartine-peche-burrata.jpg", content_type: "photo/png")
 recipe.save
 
@@ -214,7 +214,7 @@ recipe = Recipe.new(
   Quelques brins de ciboulette (pour garnir)",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934043/IMG_2793_kvrylf.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934043/IMG_2793_kvrylf.jpg")
 recipe.photo.attach(io: file, filename: "oeuf-mollet-butternut.jpg", content_type: "photo/png")
 recipe.save
 
@@ -236,7 +236,7 @@ recipe = Recipe.new(
   Quelques feuilles de menthe (pour garnir)",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/c_crop,ar_1:1/v1717934038/IMG_1118_kyw8xz.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/c_crop,ar_1:1/v1717934038/IMG_1118_kyw8xz.jpg")
 recipe.photo.attach(io: file, filename: "pavlova-aux-fraises.jpg", content_type: "photo/png")
 recipe.save
 
@@ -261,7 +261,7 @@ recipe = Recipe.new(
 • Poivre",
   user: users[1]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934007/00C3E30D-164B-45D6-980A-F1FCA477C032_spmjyu.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934007/00C3E30D-164B-45D6-980A-F1FCA477C032_spmjyu.jpg")
 recipe.photo.attach(io: file, filename: "caesar_salad.jpg", content_type: "photo/png")
 recipe.save
 
@@ -285,7 +285,7 @@ recipe = Recipe.new(
 • Sirop d'érable",
   user: users[2]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496667/h4qhuspdjaungxkzejpc.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496667/h4qhuspdjaungxkzejpc.jpg")
 recipe.photo.attach(io: file, filename: "pancakes.jpg", content_type: "photo/png")
 recipe.save
 
@@ -311,7 +311,7 @@ recipe = Recipe.new(
   1 poignée de basilic frais",
   user: users[2]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717934053/IMG_4421_vpzv2l.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717934053/IMG_4421_vpzv2l.jpg")
 recipe.photo.attach(io: file, filename: "legumes-rotis.jpg", content_type: "photo/png")
 recipe.save
 
@@ -333,7 +333,7 @@ recipe = Recipe.new(
   Chocolat râpé (pour garnir)",
   user: users[2]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717936996/IMG_5245_igjuvu.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717936996/IMG_5245_igjuvu.jpg")
 recipe.photo.attach(io: file, filename: "pancakes.jpg", content_type: "photo/png")
 recipe.save
 
@@ -360,7 +360,7 @@ recipe = Recipe.new(
 • Riz basmati",
   user: users[3]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496666/ukaz83ebods9ureiskzd.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496666/ukaz83ebods9ureiskzd.jpg")
 recipe.photo.attach(io: file, filename: "chicken_curry.jpg", content_type: "photo/png")
 recipe.save
 
@@ -377,7 +377,7 @@ recipe = Recipe.new(
 • 200ml de yaourt",
   user: users[4]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496665/ilwpuqmm7tqjjguvcqri.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496665/ilwpuqmm7tqjjguvcqri.jpg")
 recipe.photo.attach(io: file, filename: "fruit_smoothie.jpg", content_type: "photo/png")
 recipe.save
 
@@ -394,7 +394,7 @@ recipe = Recipe.new(
 • Beurre",
   user: users[0]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496664/lrywy5b7arspwc7ttxxn.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496664/lrywy5b7arspwc7ttxxn.jpg")
 recipe.photo.attach(io: file, filename: "grilled_cheese.jpg", content_type: "photo/png")
 recipe.save
 
@@ -418,7 +418,7 @@ recipe = Recipe.new(
 • Feuilles de basilic",
   user: users[1]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496663/xphcdhw7pkbezqxqvg4y.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496663/xphcdhw7pkbezqxqvg4y.jpg")
 recipe.photo.attach(io: file, filename: "tomato_soup.jpg", content_type: "photo/png")
 recipe.save
 
@@ -439,7 +439,7 @@ recipe = Recipe.new(
 • 50g de jambon coupé en dés",
   user: users[2]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496801/q2xc0h5m0gzjmzw4dxfv.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496801/q2xc0h5m0gzjmzw4dxfv.jpg")
 recipe.photo.attach(io: file, filename: "omelette.jpg", content_type: "photo/png")
 recipe.save
 
@@ -462,7 +462,7 @@ recipe = Recipe.new(
 • 100ml d'huile végétale",
   user: users[3]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496660/lcnwozhde7huz3jow1he.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496660/lcnwozhde7huz3jow1he.jpg")
 recipe.photo.attach(io: file, filename: "chocolate_cake.jpg", content_type: "photo/png")
 recipe.save
 
@@ -482,7 +482,7 @@ recipe = Recipe.new(
 • Légumes grillés",
   user: users[4]
 )
-file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/v1717496659/ibo8lmadn9updeyolkp1.jpg")
+file = URI.open("https://res.cloudinary.com/dcg9gfbhm/image/upload/q_20/v1717496659/ibo8lmadn9updeyolkp1.jpg")
 recipe.photo.attach(io: file, filename: "steak.jpg", content_type: "photo/png")
 recipe.save
 
