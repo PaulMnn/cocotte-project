@@ -37,11 +37,15 @@
 }
 
 .previsualisation{
-  height: 450px;
+  height: 464px;
   // margin-top: 50px;
   margin-bottom: 40px;
-  background-color:lightgray;
   border-radius: 20px;
+
+  img{
+    height: 60vh;
+    object-fit: cover;
+  }
 }
 
 // Bouton réglage
@@ -201,4 +205,37 @@ $transition-time: 1s;
   100% {
     transform: translateX(0px);
   }
+}
+
+// Carousel
+
+// .carousel-control-prev{
+//   height: 430px;
+//   left: 5px;
+// }
+
+
+// .carousel-control-next{
+//   height: 430px;
+//   left: 5px;
+// }
+
+
+.carousel-control-prev, .carousel-control-next {
+  height: 430px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* ajustez la largeur selon vos besoins */
+
+.carousel-control-prev {
+  left: 0; /* positionne la flèche de gauche à l'extrémité gauche */
+}
+
+.carousel-control-next {
+  right: 0; /* positionne la flèche de droite à l'extrémité droite */
+}
+
+.div.previsualisation {
+  position: relative; /* assure que la div contient les flèches */
+}
 }
