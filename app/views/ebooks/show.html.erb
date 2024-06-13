@@ -45,9 +45,9 @@
         <%# recipage templating %>
          <%# <%= image_tag 'Page0-ebook1.jpg', class: "d-block w-100"%>
          <% if recipage.photo.attached? && recipage.photo.key.present? %>
-          <%= cl_image_tag recipage.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag recipage.photo.key, height: 550, width: 400, crop: :fit %>
          <% else %>
-          <%= image_tag 'place-holder.jpg', height: 300, width: 400, crop: :fill %>
+          <%= image_tag 'place-holder.jpg', height: 550, width: 400, crop: :fit %>
          <% end %>
           <div class="carousel-caption d-none d-md-block">
             <h5><%=recipage.recipe.title%></h5>
