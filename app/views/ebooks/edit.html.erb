@@ -7,13 +7,3 @@
         <% end %>
         <h3 class="text-center mb-3">Modifiez votre Ebook</h3>
         <%= render "form", ebook: @ebook %>
-<%# To DO %>
-<%#= f.input :model,
-label: "1. Selectionner l'évènement à renouveler",
-as: :radio_buttons,
-collection: @models.map{|event| [raw(render partial: 'admin/events/model', locals: {event: event}), event.id]},
-input_html: {data: {form_target: 'input'}, class: 'sr-only'},
-item_label_class: "form-check-label w-100",
-wrapper_class:"row mx-0",
-item_wrapper_class: "col-12 col-md-6 col-lg-4"
-%>
