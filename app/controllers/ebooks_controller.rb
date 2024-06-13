@@ -1,4 +1,6 @@
 class EbooksController < ApplicationController
+  require_dependency 'rmagick_service'
+
   def show
     @ebook = Ebook.find(params[:id])
     @recipage = Recipage.new
@@ -22,6 +24,7 @@ class EbooksController < ApplicationController
     @ebook = Ebook.new(ebook_params)
     @ebook.user = current_user
     if @ebook.save
+      RMagickService.create_image_with_text(@ebook)
       redirect_to ebook_path(@ebook)
     else
       render :new, status: :unprocessable_entity
