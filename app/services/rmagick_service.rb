@@ -9,7 +9,6 @@ class RmagickService
   end
 
   def create_image_with_text
-
     titre = @recipage.recipe.title
     instructions = @recipage.recipe.instruction
     ingredients = @recipage.recipe.ingredient
@@ -28,10 +27,11 @@ class RmagickService
     draw.gravity = NorthGravity
     draw.annotate(img, 1298, 231, 56, 56, titre)
 
-     # instructions
-    draw.pointsize = 50
+    # instructions
+    draw.pointsize = 30
     draw.gravity = NorthWestGravity
-    draw.annotate(img, 828, 913, 56, 1279, instructions)
+    wrapped_instructions = wrap_text(draw, instructions, 30, 1350)
+    draw_text_lines(draw, img, wrapped_instructions, 56, 1279, 30)
 
     # ingrédients
     draw.pointsize = 50
@@ -42,24 +42,39 @@ class RmagickService
     output_path = 'app/assets/images/output.jpg'
     img.write(output_path)
 
-    # file = "output.jpg"
+    # Upload l'image sur Cloudinary
     cloud = Cloudinary::Uploader.upload(output_path)
     file = URI.open(cloud["url"])
     @recipage.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  end
 
-    # Enregistrez l'image dans un flux en mémoire
-    # img_blob = img.to_blob { self.format = 'JPEG' }
-    # img_io = StringIO.new(img_blob)
+  private
 
-    # Upload l'image sur Cloudinary
-    # cloudinary_response = Cloudinary::Uploader.upload(img_io, resource_type: :image)
+  def wrap_text(draw, text, pointsize, max_width)
+    wrapped_text = []
+    words = text.split(' ')
+    current_line = ''
 
-    # Renvoyer l'URL de l'image hébergée sur Cloudinary
-    # cloudinary_response['url']
+    words.each do |word|
+      test_line = current_line.empty? ? word : "#{current_line} #{word}"
+      metrics = draw.get_type_metrics(test_line) { |options| options.pointsize = pointsize }
 
-    # output_path
-    # puts "Image generated at: #{output_path}"
+      if metrics.width <= max_width
+        current_line = test_line
+      else
+        wrapped_text << current_line
+        current_line = word
+      end
+    end
 
-    # @recipage.templating = envoyer à cloudinary
+    wrapped_text << current_line unless current_line.empty?
+    wrapped_text
+  end
+
+  def draw_text_lines(draw, image, text_lines, x, y, pointsize)
+    line_height = draw.get_type_metrics("Hy") { |options| options.pointsize = pointsize }.height
+    text_lines.each_with_index do |line, index|
+      draw.annotate(image, 0, 0, x, y + index * line_height, line)
+    end
   end
 end
