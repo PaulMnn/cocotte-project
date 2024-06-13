@@ -23,10 +23,10 @@
                                     label: "Sélectionner les recettes à ajouter",
                                     as: :check_boxes,
                                     collection: Recipe.all.map{|recipe| [raw(render partial: "recipages", locals: {recipe: recipe }), recipe.id]},
-                                    input_html: { data: {form_target: "input" }, class: "sr-only"},
+                                    input_html: { data: {form_target: "input" }, class: "sr-only "},
                                     item_label_class: "form-check-label w-100",
                                     wrapper_class: "row mx-0",
-                                    item_wrapper_class: "col-12" %>
+                                    item_wrapper_class: "col-12 recipe-modal-card" %>
 
                     <%# modal fin %>
                 </div>
