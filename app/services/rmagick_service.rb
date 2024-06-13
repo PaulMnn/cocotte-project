@@ -2,7 +2,7 @@
 require 'rmagick'
 include Magick
 
-class RMagickService
+class RmagickService
   def self.create_image_with_text(ebook)
 
     ebook.recipages.each do |recipage|
