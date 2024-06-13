@@ -15,7 +15,7 @@ Ebook.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
-# Create users
+# # Create users
 users = []
 users << User.create!(email: 'user1@example.com', password: 'password123', password_confirmation: 'password123')
 users << User.create!(email: 'user2@example.com', password: 'password123', password_confirmation: 'password123')
@@ -489,60 +489,60 @@ recipe.save
 # Create ebooks
 ebooks = []
 
-ebook = Ebook.create!(ebook_title: 'PLATS SAINS', theme: 'style 1', user: users[0])
+ebook = Ebook.create!(ebook_title: 'PLATS SAINS', theme: 'theme-1', user: users[0])
 file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
 ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'RECETTES RAPIDES', theme: 'style 2', user: users[1])
+ebook = Ebook.create!(ebook_title: 'RECETTES RAPIDES', theme: 'theme-2', user: users[1])
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
 ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'PLATS GOURMETS', theme: 'style 1', user: users[2])
+ebook = Ebook.create!(ebook_title: 'PLATS GOURMETS', theme: 'theme-1', user: users[2])
 file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
 ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'DESSERTS', theme: 'style 2', user: users[3])
+ebook = Ebook.create!(ebook_title: 'DESSERTS', theme: 'theme-2', user: users[3])
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
 ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'VEGETARIEN', theme: 'style 1', user: users[4])
+ebook = Ebook.create!(ebook_title: 'VEGETARIEN', theme: 'theme-1', user: users[4])
 file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
 ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'APERETIFS GOURMETS', theme: 'style 2', user: users[1])
+ebook = Ebook.create!(ebook_title: 'APERETIFS GOURMETS', theme: 'theme-2', user: users[1])
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
 ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'ENTREES', theme: 'style 1', user: users[1])
+ebook = Ebook.create!(ebook_title: 'ENTREES', theme: 'theme-1', user: users[1])
 file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
 ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'CUISINE DE MAMIE', theme: 'style 2', user: users[2])
+ebook = Ebook.create!(ebook_title: 'CUISINE DE MAMIE', theme: 'theme-2', user: users[2])
 file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
 ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'RECETTES SIMPLES', theme: 'style 1', user: users[1])
+ebook = Ebook.create!(ebook_title: 'RECETTES SIMPLES', theme: 'theme-1', user: users[1])
 file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
 ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
 # Create recipages
-Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[0], ebook: ebooks[0])
-Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[1], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[2], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[3], ebook: ebooks[3])
-Recipage.create!(templating: 'Template 5', recipe: Recipe.all.to_a[4], ebook: ebooks[4])
-Recipage.create!(templating: 'Template 1', recipe: Recipe.all.to_a[5], ebook: ebooks[0])
-Recipage.create!(templating: 'Template 2', recipe: Recipe.all.to_a[6], ebook: ebooks[1])
-Recipage.create!(templating: 'Template 3', recipe: Recipe.all.to_a[7], ebook: ebooks[2])
-Recipage.create!(templating: 'Template 4', recipe: Recipe.all.to_a[8], ebook: ebooks[3])
+Recipage.create!(recipe: Recipe.all.to_a[0], ebook: ebooks[0])
+Recipage.create!(recipe: Recipe.all.to_a[1], ebook: ebooks[1])
+Recipage.create!(recipe: Recipe.all.to_a[2], ebook: ebooks[2])
+Recipage.create!(recipe: Recipe.all.to_a[3], ebook: ebooks[3])
+Recipage.create!(recipe: Recipe.all.to_a[4], ebook: ebooks[4])
+Recipage.create!(recipe: Recipe.all.to_a[5], ebook: ebooks[0])
+Recipage.create!(recipe: Recipe.all.to_a[6], ebook: ebooks[1])
+Recipage.create!(recipe: Recipe.all.to_a[7], ebook: ebooks[2])
+Recipage.create!(recipe: Recipe.all.to_a[8], ebook: ebooks[3])
 
 puts "Seed data created successfully!"
