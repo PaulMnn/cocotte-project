@@ -22,7 +22,7 @@ class EbooksController < ApplicationController
     @ebook = Ebook.new(ebook_params)
     @ebook.user = current_user
     if @ebook.save
-      redirect_to ebooks_path
+      redirect_to ebook_path(@ebook)
     else
       render :new, status: :unprocessable_entity
     end
