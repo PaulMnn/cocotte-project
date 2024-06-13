@@ -8,7 +8,6 @@ class RMagickService
   end
 
   def create_image_with_text
-
     titre = @recipage.recipe.title
     instructions = @recipage.recipe.instruction
     ingredients = @recipage.recipe.ingredient

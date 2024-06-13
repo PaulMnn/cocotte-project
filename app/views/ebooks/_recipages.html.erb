@@ -1,16 +1,12 @@
-<div class="card d-flex flex-row align-items-center mx-0 p-3">
-    <div class="form-check me-0" style="width: 40px;">
-      <%= check_box_tag "recipe_ids[]", recipe.id, false, class: "form-check-input" %>
-      <%= label_tag "recipe_ids_#{recipe.id}", "", class: "form-check-label" %>
+  <div class="card d-flex flex-row align-items-center mx-0 p-3 recipe-modal-card">
+    <div class="card-image">
+      <% if recipe.photo.attached? %>
+        <%= image_tag recipe.photo, alt: recipe.title %>
+      <% else %>
+        <%= image_tag 'default_image4.jpg', class: "background-image" %>
+      <% end %>
     </div>
-  <div class="card-image me-2" style="width: 100px;">
-    <% if recipe.photo.attached? %>
-      <%= image_tag recipe.photo, alt: recipe.title %>
-    <% else %>
-      <%= image_tag 'default_image4.jpg', class: "background-image" %>
-    <% end %>
-  </div>
-  <div class="card-content pe-3">
-    <h3><%= recipe.title %></h3>
-  </div>
+    <div class="card-content pe-3">
+      <h3><%= recipe.title %></h3>
+    </div>
 </div>
