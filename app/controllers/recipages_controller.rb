@@ -12,6 +12,7 @@ class RecipagesController < ApplicationController
     @ebook = @recipage.ebook
     @recipage.recipe = @recipe
     if @recipage.save
+      
       redirect_to @ebook
     else
       @recipages = @ebook.recipages
