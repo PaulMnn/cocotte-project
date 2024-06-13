@@ -1,3 +1,6 @@
+input::placeholder {
+  color: rgba(153, 153, 153, 0.5);
+}
 #icon.upload {
   display: none;
 }
@@ -66,13 +69,13 @@ input::placeholder {
 }
 
 .custom-color-button {
-  background-color: #1B2228;
+  background-color: #89AAC9;
   width: 50%;
   border: none;
 }
 
 .custom-color-button:hover {
-  background-color: #6E88A1;
+  background-color: #89AAC9;
   transition: 0,2;
 }
 
