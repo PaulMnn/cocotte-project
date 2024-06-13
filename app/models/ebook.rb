@@ -18,4 +18,8 @@ class Ebook < ApplicationRecord
   def desserts_count
     recipes.where(meal: 'Dessert').count
   end
+
+  def associate_theme
+    self.theme == "theme-1" ? self.theme = "/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/template-ilu.jpg" : self.theme = "/home/luciedurak/code/luciedurak/COCOTTE/cocotte-project/app/assets/images/template-ro.jpg"
+  end
 end
