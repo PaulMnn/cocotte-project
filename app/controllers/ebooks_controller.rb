@@ -22,9 +22,9 @@ class EbooksController < ApplicationController
 
   def create
     @ebook = Ebook.new(ebook_params)
+    @ebook.associate_theme
     @ebook.user = current_user
     if @ebook.save
-      RMagickService.create_image_with_text(@ebook)
       redirect_to ebook_path(@ebook)
     else
       render :new, status: :unprocessable_entity

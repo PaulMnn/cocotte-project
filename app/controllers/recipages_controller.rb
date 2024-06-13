@@ -1,4 +1,6 @@
 class RecipagesController < ApplicationController
+  require_dependency 'rmagick_service'
+
   def destroy
     @recipage = Recipage.find(params[:id])
     @ebook = @recipage.ebook
@@ -12,6 +14,7 @@ class RecipagesController < ApplicationController
     @ebook = @recipage.ebook
     @recipage.recipe = @recipe
     if @recipage.save
+      # RMagickService.new(@recipage).create_image_with_text
       redirect_to @ebook
     else
       @recipages = @ebook.recipages
