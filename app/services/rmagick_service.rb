@@ -19,15 +19,15 @@ class RmagickService
     img = Image.read("app/assets/images/#{template}").first
 
     draw = Draw.new
-    draw.font = 'Helvetica'
-
     # titre
+    draw.font = 'Arial'
     draw.pointsize = 90
     draw.fill = 'black'
     draw.gravity = NorthGravity
     draw.annotate(img, 1298, 231, 56, 56, titre)
 
     # instructions
+    draw.font = 'Helvetica'
     draw.pointsize = 30
     draw.gravity = NorthWestGravity
     wrapped_instructions = wrap_text(draw, instructions, 30, 1350)
