@@ -490,49 +490,14 @@ recipe.save
 ebooks = []
 
 ebook = Ebook.create!(ebook_title: 'PLATS SAINS', theme: 'theme-1', user: users[0])
-file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
-ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
 ebook = Ebook.create!(ebook_title: 'RECETTES RAPIDES', theme: 'theme-2', user: users[1])
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
-ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
 ebooks << ebook
 
 ebook = Ebook.create!(ebook_title: 'PLATS GOURMETS', theme: 'theme-1', user: users[2])
-file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
-ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
 ebooks << ebook
 
-ebook = Ebook.create!(ebook_title: 'DESSERTS', theme: 'theme-2', user: users[3])
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
-ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
-ebooks << ebook
-
-ebook = Ebook.create!(ebook_title: 'VEGETARIEN', theme: 'theme-1', user: users[4])
-file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
-ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
-ebooks << ebook
-
-ebook = Ebook.create!(ebook_title: 'APERETIFS GOURMETS', theme: 'theme-2', user: users[1])
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
-ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
-ebooks << ebook
-
-ebook = Ebook.create!(ebook_title: 'ENTREES', theme: 'theme-1', user: users[1])
-file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
-ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
-ebooks << ebook
-
-ebook = Ebook.create!(ebook_title: 'CUISINE DE MAMIE', theme: 'theme-2', user: users[2])
-file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggsPche_ANQj0pmUUx9L0pBVt7kLbJt5V8Q&s")
-ebook.photo.attach(io: file, filename: "quick_recipes.jpg", content_type: "photo/png")
-ebooks << ebook
-
-ebook = Ebook.create!(ebook_title: 'RECETTES SIMPLES', theme: 'theme-1', user: users[1])
-file = URI.open("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/fiches-cuisine/tous-les-themes/plats/45279226-4-fre-FR/Recettes-Plats.jpg")
-ebook.photo.attach(io: file, filename: "healthy_eating.jpg", content_type: "photo/png")
-ebooks << ebook
 
 # Create recipages
 Recipage.create!(recipe: Recipe.all.to_a[0], ebook: ebooks[0])
