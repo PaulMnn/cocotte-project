@@ -22,6 +22,6 @@ class Ebook < ApplicationRecord
   end
 
   def associate_theme
-    self.theme = (self.theme == "theme-1") ? "background-ilu.jpg" : "background-bleu-fonce.jpg"
+    self.theme = (self.theme == "theme-1") ? "background-ilu.jpg" : "preview-ro.jpg"
   end
 end
