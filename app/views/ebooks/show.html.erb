@@ -40,8 +40,8 @@
   <div class="div previsualisation">
     <div id="carouselExampleCaptions" class="carousel carousel-dark slide">
       <div class="carousel-inner">
-      <% @ebook.recipages.each do |recipage| %>
-        <div class="carousel-item active">
+      <% @ebook.recipages.each_with_index do |recipage, i| %>
+        <div class="carousel-item <%= 'active' if i.zero? %>">
         <%# recipage templating %>
          <%# <%= image_tag 'Page0-ebook1.jpg', class: "d-block w-100"%>
          <% if recipage.photo.attached? && recipage.photo.key.present? %>
